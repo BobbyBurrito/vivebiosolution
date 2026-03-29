@@ -19,7 +19,7 @@
 <meta property="og:description" content="Windsor's locally-manufactured bio-enzymatic grease trap and drain treatment. 8 billion live bacteria per litre. Free samples for Windsor-Essex businesses.">
 <meta property="og:locale" content="en_CA">
 <meta property="og:site_name" content="Vive Biosolutions Inc.">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://vivebiosolutions.ca/#business","name":"Vive Biosolutions Inc.","description":"Windsor Ontario manufacturer of bio-enzymatic grease trap, drain, and petroleum hydrocarbon treatment products.","url":"https://vivebiosolutions.ca","telephone":"+15199925101","email":"info@vivebiosolution.ca","foundingDate":"2025","address":{"@type":"PostalAddress","addressLocality":"Windsor","addressRegion":"ON","postalCode":"N8X 0A0","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":42.3149,"longitude":-83.0364},"areaServed":[{"@type":"City","name":"Windsor"},{"@type":"City","name":"Leamington"},{"@type":"City","name":"Chatham"},{"@type":"City","name":"Essex"},{"@type":"AdministrativeArea","name":"Windsor-Essex County"},{"@type":"AdministrativeArea","name":"Southern Ontario"}],"sameAs":["https://www.instagram.com/vivebiosolutions","https://www.linkedin.com/company/vivebiosolutions","https://www.facebook.com/vivebiosolutions"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Vive Biosolutions serve Windsor Ontario restaurants?","acceptedAnswer":{"@type":"Answer","text":"Yes. Vive Biosolutions is based in Windsor Ontario and serves restaurants, food service facilities and commercial kitchens across Windsor-Essex with bio-enzymatic grease trap treatment."}},{"@type":"Question","name":"How much does grease trap treatment cost in Windsor?","acceptedAnswer":{"@type":"Answer","text":"Pricing is customized based on volume and requirements. Contact us for a custom quote. Bulk discounts available for high-volume clients."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://vivebiosolutions.ca/#business","name":"Vive Biosolutions Inc.","description":"Windsor Ontario manufacturer of bio-enzymatic grease trap, drain, and petroleum hydrocarbon treatment products.","url":"https://vivebiosolutions.ca","telephone":"+15199925101","email":"info@vivebiosolutions.ca","foundingDate":"2025","address":{"@type":"PostalAddress","addressLocality":"Windsor","addressRegion":"ON","postalCode":"N8X 0A0","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":42.3149,"longitude":-83.0364},"areaServed":[{"@type":"City","name":"Windsor"},{"@type":"City","name":"Leamington"},{"@type":"City","name":"Chatham"},{"@type":"City","name":"Essex"},{"@type":"AdministrativeArea","name":"Windsor-Essex County"},{"@type":"AdministrativeArea","name":"Southern Ontario"}],"sameAs":["https://www.instagram.com/vivebiosolutions","https://www.linkedin.com/company/vivebiosolutions","https://www.facebook.com/vivebiosolutions"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Vive Biosolutions serve Windsor Ontario restaurants?","acceptedAnswer":{"@type":"Answer","text":"Yes. Vive Biosolutions is based in Windsor Ontario and serves restaurants, food service facilities and commercial kitchens across Windsor-Essex with bio-enzymatic grease trap treatment."}},{"@type":"Question","name":"How much does grease trap treatment cost in Windsor?","acceptedAnswer":{"@type":"Answer","text":"Pricing is customized based on volume and requirements. Contact us for a custom quote. Bulk discounts available for high-volume clients."}}]}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Jost:wght@300;400;500;600;700&family=Inconsolata:wght@400;500&display=swap" rel="stylesheet">
@@ -806,8 +806,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.04);}
       <div class="contact-info reveal">
         <p class="section-sub" style="margin-bottom:36px;">Talk to our founder directly. We will visit your Windsor restaurant or garage, assess your system, and deliver a sample with a complete dosing protocol.</p>
         <div class="contact-detail"><div class="c-icon">📞</div><div>Call or Text: <a href="tel:+15199925101">519-992-5101</a></div></div>
-        <div class="contact-detail"><div class="c-icon">📧</div><div>General: <a href="mailto:info@vivebiosolution.ca">info@vivebiosolution.ca</a></div></div>
-        <div class="contact-detail"><div class="c-icon">💼</div><div>Quote Inquiries: <a href="mailto:sales@vivebiosolution.ca">sales@vivebiosolution.ca</a></div></div>
+        <div class="contact-detail"><div class="c-icon">📧</div><div><a href="/cdn-cgi/l/email-protection#41282f272e013728372423282e322e2d3435282e2f326f2220"><span class="__cf_email__" data-cfemail="365f58505976405f4053545f5945595a43425f595845185557">[email&#160;protected]</span></a></div></div>
         <div class="contact-detail"><div class="c-icon">📍</div><div>Windsor, Ontario, Canada</div></div>
         <div class="contact-detail"><div class="c-icon">🕐</div><div>Mon–Fri 9 AM–5 PM EST · Sat by appt</div></div>
         
@@ -822,7 +821,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.04);}
         </div>
       </div>
       <div class="reveal d1">
-        <form class="contact-form" id="contactForm" name="contact" netlify netlify-honeypot="bot-field" action="/thank-you" method="POST" novalidate>
+        <form class="contact-form" id="contactForm" name="quote-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
           <div class="cf-title">Request a Quote</div>
           <div class="cf-sub">Custom pricing based on your volume — we respond within 24 hours</div>
           <div class="form-row">
@@ -848,10 +847,9 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.04);}
             </div>
           </div>
           <div class="form-g"><label for="msg">Tell Us About Your Situation</label><textarea id="msg" name="message" placeholder="Type of facility, current pump-out frequency, any FOG compliance issues..."></textarea></div>
-          <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="form-name" value="quote-request">
           <input type="hidden" name="_subject" value="New Quote Request — vivebiosolutions.ca">
-          <input type="hidden" name="recipient" value="sales@vivebiosolution.ca">
-          <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <p style="display:none;"><label>Do not fill this out: <input name="bot-field"></label></p>
           <button type="submit" class="form-submit">Send Request — Free Sample Incoming 🌿</button>
           <div class="form-note">We respond within 24 hours. No spam. No automatic billing.</div>
         </form>
@@ -900,7 +898,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.04);}
   </div>
   <div class="footer-bottom">
     <div class="f-copy">© 2025 Vive Biosolutions Inc. Windsor, Ontario, Canada. WHMIS 2022 compliant. vivebiosolutions.ca</div>
-    <div class="f-legal"><a href="#about">Compliance</a><a href="mailto:info@vivebiosolution.ca">Contact</a></div>
+    <div class="f-legal"><a href="#about">Compliance</a><a href="/cdn-cgi/l/email-protection#dbb2b5bdb49badb2adbeb9b2b4a8b4b7aeafb2b4b5a8f5b8ba">Contact</a></div>
   </div>
 </footer>
 
@@ -919,8 +917,39 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.04);}
 (function(){const b=document.getElementById('btt');window.addEventListener('scroll',()=>b.classList.toggle('vis',window.scrollY>400),{passive:true});b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));})();
 // Smooth anchors
 (function(){document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);const el=document.getElementById(id);if(el){e.preventDefault();window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-68,behavior:'smooth'});}});});})();
-// Form — Netlify native submission
-(function(){const f=document.getElementById('contactForm');const s=document.getElementById('formSuccess');if(!f||!s)return;f.addEventListener('submit',async e=>{e.preventDefault();const b=f.querySelector('.form-submit');b.textContent='Sending...';b.disabled=true;try{const data=new FormData(f);const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()});if(r.ok){f.style.display='none';s.style.display='block';}else{b.textContent='Error — email sales@vivebiosolution.ca';b.disabled=false;}}catch{b.textContent='Email sales@vivebiosolution.ca';b.disabled=false;}});})();
+// Form — Netlify Forms handler
+(function(){
+  var f=document.getElementById('contactForm');
+  var s=document.getElementById('formSuccess');
+  if(!f||!s)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=f.querySelector('.form-submit');
+    btn.textContent='Sending your request...';
+    btn.disabled=true;
+    var data=new FormData(f);
+    fetch('/',{
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams(data).toString()
+    })
+    .then(function(r){
+      if(r.ok){
+        f.style.display='none';
+        s.style.display='block';
+      } else {
+        btn.textContent='Error — please email info@vivebiosolutions.ca';
+        btn.style.background='#c84b11';
+        btn.disabled=false;
+      }
+    })
+    .catch(function(){
+      btn.textContent='Error — please email info@vivebiosolutions.ca';
+      btn.style.background='#c84b11';
+      btn.disabled=false;
+    });
+  });
+})();
 </script>
 
 <!-- BULK DISCOUNT BANNER added via JS after products -->
