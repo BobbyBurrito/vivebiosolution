@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Vive Bio Solution</title>
+    <meta name="description" content="Get a custom quote or request a free sample of our Windsor-manufactured bio-enzymatic products.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        .contact-info {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 8px;
+        }
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: var(--font-main);
+            font-size: 16px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+        .btn-submit {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.jpeg" alt="Vive Bio Solution Logo" class="nav-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Products</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="btn-primary nav-btn">Get a Quote</a>
+        </div>
+    </nav>
+
+    <header class="page-header" style="background-color: var(--primary-color); color: white; padding: 60px 0; text-align: center;">
+        <div class="container">
+            <h1 style="color: white;">Get in Touch</h1>
+            <p style="color: white; max-width: 600px; margin: 0 auto;">Connect with our Windsor engineering team for samples, pricing, and dosing protocols.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Direct Manufacturer Support</h3>
+                    <p>We are here to answer your technical questions and help you optimize your facility's biological systems.</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <p><strong>📞 Phone:</strong> +1-519-992-5101</p>
+                        <p><strong>✉️ Email:</strong> Info@vivebiosolution.ca</p>
+                        <p><strong>📍 Location:</strong> Windsor, Ontario, Canada</p>
+                        <p><strong>🕒 Hours:</strong> 24/7 Emergency Support Available</p>
+                    </div>
+
+                    <h3 style="margin-top: 40px;">Serving Southern Ontario</h3>
+                    <p>Windsor, LaSalle, Tecumseh, Amherstburg, Essex, Kingsville, Leamington, Chatham, Tilbury, Sarnia, and London.</p>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 20px; color: var(--primary-color);">Request Quote or Sample</h3>
+                    <form name="quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+                        <input type="hidden" name="form-name" value="quote-request">
+                        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Product Interest *</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a Product</option>
+                                <option value="biotrap">BioTrap FOG Eliminator (Restaurants)</option>
+                                <option value="autobio">AutoBio Petroleum Degrader (Industrial)</option>
+                                <option value="bioflow">BioFlow Home + Septic (Residential)</option>
+                                <option value="other">General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Details (Facility Type, FOG Issues, etc.)</label>
+                            <textarea id="message" name="message" placeholder="Briefly describe your current facility or challenges..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary btn-submit">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <img src="logo.jpeg" alt="Vive Bio Solution Logo" class="footer-logo">
+                <p>Advanced Bio-Enzymatic Solutions for a Cleaner, Safer Environment.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Phone: (519) 992-5101</p>
+                <p>Email: Info@vivebiosolution.ca</p>
+                <p>Location: Windsor, Ontario, Canada</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vive Bio Solution Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
