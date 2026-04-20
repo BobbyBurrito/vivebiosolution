@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Vive Bio Solution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/vive-logo.jpeg" alt="Vive Bio Solution Logo" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="about.html" class="nav-link">Why Vive Bio</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </nav>
+                <button class="btn btn-primary" onclick="window.location.href='contact.html'">Get Quote</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>Connect with our Windsor engineering team for samples, pricing, and custom dosing protocols</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Direct Manufacturer Support</h3>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>📞 Phone</h4>
+                            <p><a href="tel:+15199925101">+1-519-992-5101</a></p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4>📧 Email</h4>
+                            <p><a href="mailto:Info@vivebiosolution.ca">Info@vivebiosolution.ca</a></p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4>📍 Location</h4>
+                            <p>Windsor, Ontario, Canada</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4>⏰ Hours</h4>
+                            <p>24/7 Emergency Support Available</p>
+                        </div>
+                    </div>
+
+                    <div class="service-area">
+                        <h4>Serving Southern Ontario</h4>
+                        <p>Windsor, Leamington, Tecumseh, Amherstburg, Essex, Kingsville, Lakeshore, Chatham, Tilbury, Sarnia, and London</p>
+                    </div>
+
+                    <div class="contact-benefits">
+                        <h4>Why Contact Us?</h4>
+                        <ul>
+                            <li>✓ Direct manufacturer - no middlemen</li>
+                            <li>✓ Expert technical support</li>
+                            <li>✓ Custom dosing protocols</li>
+                            <li>✓ Bulk pricing available</li>
+                            <li>✓ Fast response times</li>
+                            <li>✓ Free samples</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Quote Form -->
+                <div class="quote-form">
+                    <h3>Quick Quote Request</h3>
+                    <form id="quoteForm" onsubmit="submitQuoteForm(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" placeholder="John Smith" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1-519-XXX-XXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Your Company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product">Product Interest *</label>
+                            <select id="product" name="product" required>
+                                <option value="">Select a product</option>
+                                <option value="VIVE-DRAIN FOG Terminator">VIVE-DRAIN FOG Terminator</option>
+                                <option value="VIVE-SHIFT Industrial Degreaser">VIVE-SHIFT Industrial Degreaser</option>
+                                <option value="Both Products">Both Products</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="quantity">Estimated Monthly Quantity (Litres)</label>
+                            <input type="number" id="quantity" name="quantity" placeholder="e.g., 100">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your needs, facility type, current challenges..." rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to our newsletter for updates and tips</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Send Request</button>
+                        <p class="form-note">We'll respond within 24 hours</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How quickly will I see results?</h4>
+                    <p>Most customers notice improved drainage and reduced odors within the first week of use. Full benefits are typically realized within 2-3 weeks.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Is it safe for my equipment?</h4>
+                    <p>Yes! Our products are 100% safe for all plumbing and equipment. They're chemical-free and won't damage pipes or septic systems.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>What's the shelf life?</h4>
+                    <p>Our products have a 24-month shelf life when stored in cool, dry conditions. Check the label for the specific expiration date.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Do you offer bulk discounts?</h4>
+                    <p>Yes! We offer competitive bulk pricing for large orders. Contact us for a custom quote based on your volume needs.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>How do I know which product to choose?</h4>
+                    <p>VIVE-DRAIN is best for restaurants and food service. VIVE-SHIFT is ideal for industrial and manufacturing applications. Contact us if you're unsure.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Do you provide technical support?</h4>
+                    <p>Absolutely! Our team provides free technical support, dosing protocols, and custom solutions for your specific needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Fill out the form above or call us directly for immediate assistance</p>
+                <a href="tel:+15199925101" class="btn btn-primary">Call Now: +1-519-992-5101</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Vive Bio</h4>
+                    <p>Windsor-engineered bio-enzymatic solutions for industrial cleaning and environmental responsibility.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>
+                        <a href="tel:+15199925101">+1-519-992-5101</a><br>
+                        <a href="mailto:Info@vivebiosolution.ca">Info@vivebiosolution.ca</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vive Bio Solution. All rights reserved. Made in Canada.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

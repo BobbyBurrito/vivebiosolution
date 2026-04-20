@@ -3,146 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog & Insights | Vive Bio Solution</title>
-    <meta name="description" content="Expert insights on bio-enzymatic FOG treatment, industrial wastewater, and septic maintenance from Windsor's leading manufacturer.">
+    <title>Blog | Vive Bio Solution</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        .blog-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        }
-        .blog-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .blog-content {
-            padding: 20px;
-        }
-        .blog-date {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .blog-title {
-            font-size: 1.25rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo-link">
-                <img src="logo.jpeg" alt="Vive Bio Solution Logo" class="nav-logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Products</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <a href="contact.html" class="btn-primary nav-btn">Get a Quote</a>
-        </div>
-    </nav>
-
-    <header class="page-header" style="background-color: var(--primary-color); color: white; padding: 60px 0; text-align: center;">
+    <!-- Navigation Header -->
+    <header class="header">
         <div class="container">
-            <h1 style="color: white;">Insights from the Lab</h1>
-            <p style="color: white; max-width: 600px; margin: 0 auto;">Expert advice, industry news, and science-backed answers to your most common questions.</p>
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/vive-logo.jpeg" alt="Vive Bio Solution Logo" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="about.html" class="nav-link">Why Vive Bio</a>
+                    <a href="blog.html" class="nav-link active">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <button class="btn btn-primary" onclick="window.location.href='contact.html'">Get Quote</button>
+            </div>
         </div>
     </header>
 
-    <section class="section-padding bg-light">
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Insights from the Lab</h1>
+            <p>Expert advice, industry news, and science-backed answers to your most common questions</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog">
         <div class="container">
             <div class="blog-grid">
                 <!-- Blog Post 1 -->
-                <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bio-remediation" class="blog-img">
-                    <div class="blog-content">
-                        <span class="blog-date">April 8, 2026</span>
-                        <h3 class="blog-title">Optimizing Biological Activity for Superior Results</h3>
-                        <p>Discover the science behind maximizing biological effectiveness for FOG destruction in commercial grease traps.</p>
-                        <a href="article1.html" class="link-more">Read Article &rarr;</a>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Optimizing Biological Activity">
                     </div>
-                </article>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 April 8, 2026</span>
+                            <span class="blog-category">Science</span>
+                        </div>
+                        <h3 class="blog-title">Optimizing Biological Activity for Superior Results</h3>
+                        <p class="blog-description">Discover the science behind maximizing biological effectiveness for FOG destruction in commercial grease traps. Learn how bacterial concentration, temperature, and pH levels impact performance.</p>
+                        <button class="btn btn-outline btn-small" onclick="alert('Full article coming soon!')">Read Article →</button>
+                    </div>
+                </div>
 
                 <!-- Blog Post 2 -->
-                <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Windsor FOG Bylaw" class="blog-img">
-                    <div class="blog-content">
-                        <span class="blog-date">March 22, 2026</span>
-                        <h3 class="blog-title">Windsor FOG Bylaw: What You Need to Know</h3>
-                        <p>A guide for Windsor-Essex restaurant owners on staying compliant and avoiding costly municipal fines.</p>
-                        <a href="article2.html" class="link-more">Read Article &rarr;</a>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Windsor FOG Bylaw">
                     </div>
-                </article>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 March 22, 2026</span>
+                            <span class="blog-category">Compliance</span>
+                        </div>
+                        <h3 class="blog-title">Windsor FOG Bylaw: What You Need to Know</h3>
+                        <p class="blog-description">A comprehensive guide for Windsor-Essex restaurant owners on staying compliant with municipal FOG regulations and avoiding costly fines. Understand requirements and best practices.</p>
+                        <button class="btn btn-outline btn-small" onclick="alert('Full article coming soon!')">Read Article →</button>
+                    </div>
+                </div>
 
                 <!-- Blog Post 3 -->
-                <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Septic maintenance" class="blog-img">
-                    <div class="blog-content">
-                        <span class="blog-date">March 10, 2026</span>
-                        <h3 class="blog-title">The Science of Septic: Multi-Action Biological Formulas</h3>
-                        <p>Understand why comprehensive biological formulas are crucial for effectively breaking down diverse waste in modern residential septic systems.</p>
-                        <a href="article3.html" class="link-more">Read Article &rarr;</a>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Science of Septic">
                     </div>
-                </article>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 March 10, 2026</span>
+                            <span class="blog-category">Technology</span>
+                        </div>
+                        <h3 class="blog-title">The Science of Septic: Multi-Action Biological Formulas</h3>
+                        <p class="blog-description">Understand why comprehensive biological formulas are crucial for effectively breaking down diverse waste in modern septic systems. Explore enzyme action and bacterial synergy.</p>
+                        <button class="btn btn-outline btn-small" onclick="alert('Full article coming soon!')">Read Article →</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="final-cta">
-        <div class="container cta-content">
-            <h2>Stay informed. Stay compliant.</h2>
-            <p>Subscribe to our newsletter for the latest insights from our Windsor engineering team.</p>
-            <a href="contact.html" class="btn-primary btn-large">Request Pricing</a>
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for the latest insights, product updates, and industry news</p>
+                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p class="newsletter-note">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <img src="logo.jpeg" alt="Vive Bio Solution Logo" class="footer-logo">
-                <p>Advanced Bio-Enzymatic Solutions for a Cleaner, Safer Environment.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Products</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>Phone: (519) 992-5101</p>
-                <p>Email: Info@vivebiosolution.ca</p>
-                <p>Location: Windsor, Ontario, Canada</p>
+    <!-- Related Products Section -->
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">Related Products</h2>
+            <p class="section-subtitle">Explore our complete product line</p>
+            
+            <div class="products-preview">
+                <div class="product-preview-card">
+                    <img src="images/vive-drain-product.png" alt="VIVE-DRAIN">
+                    <h3>VIVE-DRAIN FOG Terminator</h3>
+                    <p>$16/litre</p>
+                    <a href="products.html" class="btn btn-outline btn-small">View Details</a>
+                </div>
+
+                <div class="product-preview-card">
+                    <img src="images/vive-shift-product.png" alt="VIVE-SHIFT">
+                    <h3>VIVE-SHIFT Industrial Degreaser</h3>
+                    <p>Custom Pricing</p>
+                    <a href="products.html" class="btn btn-outline btn-small">View Details</a>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Vive Bio Solution Inc. All rights reserved.</p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Have Questions?</h2>
+                <p>Our team is ready to help with technical advice and product recommendations</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Vive Bio</h4>
+                    <p>Windsor-engineered bio-enzymatic solutions for industrial cleaning and environmental responsibility.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>
+                        <a href="tel:+15199925101">+1-519-992-5101</a><br>
+                        <a href="mailto:Info@vivebiosolution.ca">Info@vivebiosolution.ca</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vive Bio Solution. All rights reserved. Made in Canada.</p>
+            </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
