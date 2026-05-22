@@ -122,6 +122,82 @@ nav a {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.product-card-image {
+  width: 100%;
+  height: 250px;
+  background: #f0f0f0;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.product-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #020617;
+}
+
+.product-card p {
+  color: #475569;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.product-note {
+  background: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-size: 13px;
+  color: #166534;
+  margin: 15px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #020617;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: #475569;
+}
+
 .hero h2 {
   font-size: 64px;
   line-height: 1.1;
@@ -344,7 +420,8 @@ footer p {
   .card-grid,
   .blog-grid,
   .industry-grid,
-  .stats {
+  .stats,
+  .products-grid {
     grid-template-columns: 1fr;
   }
 
@@ -363,5 +440,9 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .section-header h2 {
+    font-size: 36px;
   }
 }
