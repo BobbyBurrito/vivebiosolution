@@ -25,6 +25,45 @@
   <title>Professional Cleaning Products | Vive Biosolution Corporation</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Product image fix: show the full uploaded mockup/photo, including its background.
+       This overrides the global product-card cropping rules in style.css. */
+    .product-card-image {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 16 / 10 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: #f8fafc !important;
+      border: 1px solid rgba(148, 163, 184, 0.35) !important;
+      border-radius: 18px !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
+    }
+
+    .product-card-image img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      display: block !important;
+      background: #f8fafc !important;
+      transform: none !important;
+    }
+
+    .product-card:hover .product-card-image img {
+      transform: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .product-card-image {
+        aspect-ratio: 4 / 3 !important;
+      }
+    }
+  </style>
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
