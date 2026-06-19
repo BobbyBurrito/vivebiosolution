@@ -1,96 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GXRRZ2C973"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-GXRRZ2C973');
   </script>
-</head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VIVE BIOSOLUTION Blog: Expert insights on industrial degreasers, commercial kitchen cleaning, institutional cleaning chemistry, and bio-based solutions for CNC shops, restaurants, and facilities in Windsor-Essex, Ontario." />
+  <meta name="description" content="Professional cleaning product insights from Vive Biosolution Corporation, covering industrial degreasers, janitorial cleaning products, commercial kitchens and Windsor-Essex facility maintenance." />
   <meta name="keywords" content="cleaning blog, industrial degreaser Windsor, commercial kitchen cleaner Windsor, institutional cleaning Windsor, bio-based cleaning chemistry, CNC shop degreaser, butyl-free degreaser, Windsor Ontario" />
   <meta name="author" content="VIVE BIOSOLUTION" />
   <meta property="og:title" content="Professional Cleaning Chemistry Blog | VIVE BIOSOLUTION - Windsor-Essex Insights" />
   <meta property="og:description" content="Expert insights on professional cleaning chemistry, product tips, and industry trends for industrial, commercial, and institutional facilities in the Windsor-Essex region." />
   <meta property="og:type" content="website" />
-  <title>Cleaning Chemistry Blog | VIVE BIOSOLUTION - Industry Insights & Professional Tips</title>
+  <link rel="canonical" href="https://vivebiosolution.ca/blog" />
+  <meta property="og:url" content="https://vivebiosolution.ca/blog" />
+  <meta property="og:image" content="https://vivebiosolution.ca/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Cleaning Product Blog | Vive Biosolution Corporation</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css">
   <style>
-    .blog-post {
-      max-width: 900px;
+    .blog-container {
+      max-width: 1200px;
       margin: 0 auto;
-      line-height: 1.8;
-      color: #333;
-      padding-bottom: 40px;
-      border-bottom: 1px solid #e2e8f0;
-      margin-bottom: 40px;
+      padding: 40px 20px;
     }
-    .blog-post:last-of-type {
-      border-bottom: none;
-      margin-bottom: 0;
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
-    .blog-post h1 {
+
+    .blog-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .blog-card-header {
+      background: linear-gradient(135deg, #0A2463 0%, #1B4332 100%);
+      color: white;
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .blog-card-number {
       font-size: 2.5em;
-      color: #0A2463;
-      margin: 30px 0 10px 0;
+      font-weight: bold;
+      color: #22c55e;
+      margin-bottom: 15px;
+    }
+
+    .blog-card-title {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-bottom: 15px;
       line-height: 1.3;
     }
-    .blog-post h2 {
-      font-size: 1.8em;
-      color: #0A2463;
-      margin: 30px 0 15px 0;
-      border-bottom: 2px solid #22c55e;
-      padding-bottom: 10px;
+
+    .blog-card-excerpt {
+      font-size: 0.95em;
+      color: #e2e8f0;
+      line-height: 1.6;
+      margin-bottom: 15px;
     }
-    .blog-post h3 {
-      font-size: 1.3em;
-      color: #1B4332;
-      margin: 20px 0 10px 0;
+
+    .blog-card-meta {
+      font-size: 0.85em;
+      color: #cbd5e1;
+      margin-bottom: 20px;
     }
-    .blog-post p {
-      margin: 15px 0;
-      font-size: 1.05em;
+
+    .blog-card-footer {
+      padding: 20px 30px;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
     }
-    .blog-post ul {
-      margin: 15px 0;
-      padding-left: 30px;
-    }
-    .blog-post li {
-      margin: 10px 0;
-      font-size: 1.05em;
-    }
-    .blog-post a {
-      color: #22c55e;
-      text-decoration: none;
+
+    .read-more-btn {
+      background: #22c55e;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-size: 1em;
       font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+      text-align: center;
     }
-    .blog-post a:hover {
-      text-decoration: underline;
+
+    .read-more-btn:hover {
+      background: #16a34a;
     }
-    .blog-meta {
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 5% auto;
+      padding: 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+      max-height: 85vh;
+      overflow-y: auto;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .close-btn {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .modal-title {
+      color: #0A2463;
+      font-size: 2em;
+      margin: 20px 0 10px 0;
+      line-height: 1.3;
+    }
+
+    .modal-meta {
       color: #666;
       font-size: 0.95em;
       margin-bottom: 30px;
       font-style: italic;
     }
-    .blog-number {
-      font-size: 3em;
-      color: #22c55e;
-      font-weight: bold;
-      margin-right: 20px;
-      display: inline-block;
-      vertical-align: middle;
+
+    .modal-body {
+      color: #333;
+      line-height: 1.8;
+      font-size: 1.05em;
     }
-    .blog-header-content {
-      display: inline-block;
-      vertical-align: middle;
+
+    .modal-body h2 {
+      color: #0A2463;
+      font-size: 1.6em;
+      margin: 30px 0 15px 0;
+      border-bottom: 2px solid #22c55e;
+      padding-bottom: 10px;
+    }
+
+    .modal-body h3 {
+      color: #1B4332;
+      font-size: 1.2em;
+      margin: 20px 0 10px 0;
+    }
+
+    .modal-body p {
+      margin: 15px 0;
+    }
+
+    .modal-body ul {
+      margin: 15px 0;
+      padding-left: 30px;
+    }
+
+    .modal-body li {
+      margin: 10px 0;
+    }
+
+    .modal-body a {
+      color: #22c55e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .modal-body a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 95%;
+        padding: 20px;
+        margin: 20% auto;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-title {
+        font-size: 1.5em;
+      }
     }
   </style>
 </head>
@@ -102,25 +252,122 @@
       </div>
       <h1>Professional Cleaning Chemistry Blog</h1>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/products">Products</a>
+        <a href="/contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <section class="section">
-    <div class="container">
-      
-      <!-- ARTICLE 1: CNC SHOPS -->
-      <article class="blog-post">
-        <div class="blog-number">1</div>
-        <div class="blog-header-content">
-          <h1>The Best Industrial Degreaser for CNC Shops in Windsor: Why Butyl-Free is the Future</h1>
-          <p class="blog-meta">Published by VIVE BIOSOLUTION | May 23, 2026</p>
+    <div class="blog-container">
+      <h2 style="text-align: center; color: #0A2463; font-size: 2em; margin-bottom: 10px;">Industry Insights & Expert Tips</h2>
+      <p style="text-align: center; color: #666; font-size: 1.1em; margin-bottom: 40px;">Discover professional cleaning chemistry insights tailored for Windsor-Essex businesses</p>
+
+      <div class="blog-grid">
+        <!-- Article 1 -->
+        <div class="blog-card" onclick="openModal('modal1')">
+          <div class="blog-card-header">
+            <div class="blog-card-number">1</div>
+            <div>
+              <h3 class="blog-card-title">The Best Industrial Degreaser for CNC Shops in Windsor</h3>
+              <p class="blog-card-excerpt">Why Butyl-Free is the Future</p>
+              <p class="blog-card-meta">Published May 23, 2026</p>
+            </div>
+          </div>
+          <div class="blog-card-footer">
+            <button class="read-more-btn">Read Full Article</button>
+          </div>
         </div>
 
+        <!-- Article 2 -->
+        <div class="blog-card" onclick="openModal('modal2')">
+          <div class="blog-card-header">
+            <div class="blog-card-number">2</div>
+            <div>
+              <h3 class="blog-card-title">Commercial Kitchen Cleaning in Windsor-Essex</h3>
+              <p class="blog-card-excerpt">Achieving Hygiene and Efficiency</p>
+              <p class="blog-card-meta">Published May 24, 2026</p>
+            </div>
+          </div>
+          <div class="blog-card-footer">
+            <button class="read-more-btn">Read Full Article</button>
+          </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="blog-card" onclick="openModal('modal3')">
+          <div class="blog-card-header">
+            <div class="blog-card-number">3</div>
+            <div>
+              <h3 class="blog-card-title">Institutional Cleaning in Windsor-Essex</h3>
+              <p class="blog-card-excerpt">Prioritizing Health and Sustainability</p>
+              <p class="blog-card-meta">Published May 25, 2026</p>
+            </div>
+          </div>
+          <div class="blog-card-footer">
+            <button class="read-more-btn">Read Full Article</button>
+          </div>
+        </div>
+
+        <!-- Article 4 -->
+        <div class="blog-card" onclick="openModal('modal4')">
+          <div class="blog-card-header">
+            <div class="blog-card-number">4</div>
+            <div>
+              <h3 class="blog-card-title">Industrial Cleaning Solutions in Windsor-Essex</h3>
+              <p class="blog-card-excerpt">Why Local Expertise Matters</p>
+              <p class="blog-card-meta">Published June 1, 2026</p>
+            </div>
+          </div>
+          <div class="blog-card-footer">
+            <button class="read-more-btn">Read Full Article</button>
+          </div>
+        </div>
+
+        <!-- Article 5 -->
+        <div class="blog-card" onclick="openModal('modal5')">
+          <div class="blog-card-header">
+            <div class="blog-card-number">5</div>
+            <div>
+              <h3 class="blog-card-title">Bio-Based Cleaning: The Sustainable & Cost-Effective Choice</h3>
+              <p class="blog-card-excerpt">Environmental and Economic Benefits for Windsor-Essex</p>
+              <p class="blog-card-meta">Published June 2, 2026</p>
+            </div>
+          </div>
+          <div class="blog-card-footer">
+            <button class="read-more-btn">Read Full Article</button>
+          </div>
+        </div>
+
+        <!-- Article 6 -->
+        <div class="blog-card" onclick="openModal('modal6')">
+          <div class="blog-card-header">
+            <div class="blog-card-number">6</div>
+            <div>
+              <h3 class="blog-card-title">Why Choose a Local Cleaning Supplier in Windsor-Essex?</h3>
+              <p class="blog-card-excerpt">The VIVE BIOSOLUTION Advantage</p>
+              <p class="blog-card-meta">Published June 3, 2026</p>
+            </div>
+          </div>
+          <div class="blog-card-footer">
+            <button class="read-more-btn">Read Full Article</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALS FOR EACH ARTICLE -->
+
+  <!-- Modal 1: CNC Shops -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+      <h1 class="modal-title">The Best Industrial Degreaser for CNC Shops in Windsor: Why Butyl-Free is the Future</h1>
+      <p class="modal-meta">Published by VIVE BIOSOLUTION | May 23, 2026</p>
+      <div class="modal-body">
         <p>In the bustling industrial landscape of Windsor, Ontario, CNC machining and metal fabrication shops are the backbone of many industries. These environments demand powerful cleaning solutions to maintain equipment, ensure worker safety, and uphold product quality. Traditionally, many shops have relied on degreasers containing 2-Butoxyethanol, commonly known as butyl. However, modern chemistry offers superior, safer alternatives. VIVE BIOSOLUTION is at the forefront, providing bio-based, butyl-free industrial degreasers specifically engineered for the unique challenges of CNC shops.</p>
 
         <h2>The Problem with Traditional Butyl-Based Degreasers</h2>
@@ -136,38 +383,39 @@
 
         <h3>Key Advantages of VIVE-SHIFT:</h3>
         <ul>
-          <li><strong>Butyl-Free Formulation</strong>: VIVE-SHIFT completely eliminates 2-Butoxyethanol, removing the reproductive hazard classification and creating a healthier workspace for your team. This is a critical factor for any responsible CNC shop in Windsor looking to prioritize worker well-being.</li>
-          <li><strong>Low VOC (Volatile Organic Compound) Content</strong>: With a VOC content of just 3.8%, VIVE-SHIFT significantly reduces airborne emissions. This means improved air quality in enclosed machining areas, leading to greater worker comfort and reduced health risks.</li>
-          <li><strong>Bio-Surfactant Technology</strong>: Our formula utilizes advanced bio-surfactants that are biodegradable and highly effective at penetrating and lifting stubborn oils, grease, and coolants. This not only ensures a thorough clean but also aids in easier drain compliance.</li>
-          <li><strong>Citrus D-Limonene Bio-Solvent</strong>: Harnessing the natural degreasing power of citrus, VIVE-SHIFT cuts through heavy contamination on metal surfaces, CNC equipment, and shop floors with remarkable efficiency. This natural solvent provides powerful cleaning without the harshness of synthetic alternatives.</li>
-          <li><strong>Fast-Acting & Reduced Dwell Time</strong>: VIVE-SHIFT is designed for rapid action, minimizing the time required for the degreaser to penetrate grime. This reduces manual scrubbing and overall cleaning downtime, boosting productivity in your CNC shop.</li>
-          <li><strong>WHMIS 2015 / GHS Compliant</strong>: Safety is paramount. VIVE-SHIFT comes with a fully compliant Safety Data Sheet (SDS), providing transparent and essential information for workplace safety protocols.</li>
-          <li><strong>Made in Canada</strong>: Proudly engineered and manufactured in Windsor, Ontario, VIVE-SHIFT supports local industry while adhering to stringent Canadian quality standards.</li>
+          <li><strong>Butyl-Free Formulation</strong>: VIVE-SHIFT completely eliminates 2-Butoxyethanol, removing the reproductive hazard classification and creating a healthier workspace for your team.</li>
+          <li><strong>Low VOC (Volatile Organic Compound) Content</strong>: With a VOC content of just 3.8%, VIVE-SHIFT significantly reduces airborne emissions.</li>
+          <li><strong>Bio-Surfactant Technology</strong>: Our formula utilizes advanced bio-surfactants that are biodegradable and highly effective at penetrating and lifting stubborn oils, grease, and coolants.</li>
+          <li><strong>Citrus D-Limonene Bio-Solvent</strong>: Harnessing the natural degreasing power of citrus, VIVE-SHIFT cuts through heavy contamination with remarkable efficiency.</li>
+          <li><strong>Fast-Acting & Reduced Dwell Time</strong>: VIVE-SHIFT is designed for rapid action, minimizing the time required for the degreaser to penetrate grime.</li>
+          <li><strong>WHMIS 2015 / GHS Compliant</strong>: Safety is paramount. VIVE-SHIFT comes with a fully compliant Safety Data Sheet (SDS).</li>
+          <li><strong>Made in Canada</strong>: Proudly engineered and manufactured in Windsor, Ontario.</li>
         </ul>
 
         <h2>Applications in Your CNC Shop</h2>
         <p>VIVE-SHIFT is versatile and effective across various applications in a CNC machining or metal fabrication environment:</p>
         <ul>
           <li><strong>CNC Equipment</strong>: Safely cleans lathes, mills, and other precision machinery, removing cutting fluids and metalworking lubricants.</li>
-          <li><strong>Metal Surfaces</strong>: Ideal for degreasing raw materials, fabricated parts, and finished components before further processing or finishing.</li>
-          <li><strong>Shop Floors</strong>: Effectively removes oil spills, grease buildup, and general industrial grime from concrete and epoxy floors, improving safety and cleanliness.</li>
+          <li><strong>Metal Surfaces</strong>: Ideal for degreasing raw materials, fabricated parts, and finished components before further processing.</li>
+          <li><strong>Shop Floors</strong>: Effectively removes oil spills, grease buildup, and general industrial grime from concrete and epoxy floors.</li>
           <li><strong>Tool & Parts Cleaning</strong>: Excellent for cleaning tools, jigs, and smaller parts, ensuring they are free from contaminants.</li>
         </ul>
 
         <h2>Conclusion</h2>
         <p>Choosing the right industrial degreaser is a critical decision for any CNC shop in Windsor. By opting for VIVE-SHIFT, you're not just selecting a powerful cleaning solution; you're investing in the health and safety of your workforce, the longevity of your equipment, and a more environmentally responsible operation. Experience the future of industrial cleaning chemistry with VIVE BIOSOLUTION – where performance meets peace of mind.</p>
 
-        <p>Ready to make the switch? <a href="contact.html">Contact us today</a> for a sample or to discuss your specific cleaning needs. Your CNC shop deserves the best, and the best is butyl-free.</p>
-      </article>
+        <p>Ready to make the switch? <a href="/contact">Contact us today</a> for a sample or to discuss your specific cleaning needs. Your CNC shop deserves the best, and the best is butyl-free.</p>
+      </div>
+    </div>
+  </div>
 
-      <!-- ARTICLE 2: COMMERCIAL KITCHENS -->
-      <article class="blog-post">
-        <div class="blog-number">2</div>
-        <div class="blog-header-content">
-          <h1>Commercial Kitchen Cleaning in Windsor-Essex: Achieving Hygiene and Efficiency</h1>
-          <p class="blog-meta">Published by VIVE BIOSOLUTION | May 24, 2026</p>
-        </div>
-
+  <!-- Modal 2: Commercial Kitchens -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+      <h1 class="modal-title">Commercial Kitchen Cleaning in Windsor-Essex: Achieving Hygiene and Efficiency</h1>
+      <p class="modal-meta">Published by VIVE BIOSOLUTION | May 24, 2026</p>
+      <div class="modal-body">
         <p>Commercial kitchens in Windsor-Essex, from bustling restaurants to catering services, operate under immense pressure to maintain impeccable hygiene standards. Beyond aesthetics, cleanliness is critical for food safety, operational flow, and customer satisfaction. However, many traditional kitchen cleaners come with harsh fumes and environmental concerns. VIVE BIOSOLUTION, your local Windsor-based partner, offers advanced bio-based cleaning solutions specifically formulated to meet the rigorous demands of commercial kitchens, ensuring powerful cleaning without compromise.</p>
 
         <h2>The Unique Cleaning Demands of Windsor-Essex Commercial Kitchens</h2>
@@ -184,8 +432,8 @@
 
         <h3>Key Products for Commercial Kitchens:</h3>
         <ul>
-          <li><strong>VIVE-GRILL (Oven & Grill Cleaner)</strong>: This bio-powered, high-alkaline formula uses D-Limonene bio-solvent to cut through baked-on grease and carbon without the need for chlorinated or caustic fumes. It ensures a thorough clean for your ovens, grills, and fryer exteriors, making it safer for use in food prep areas.</li>
-          <li><strong>VIVE-DISH (Dish Washing Liquid)</strong>: A concentrated, plant-derived dishwashing liquid that is tough on grease but gentle on hands. Its skin-safe pH and glycerin conditioning make it ideal for frequent use, while its biodegradable surfactants ensure effective cleaning and better drain compliance.</li>
+          <li><strong>VIVE-GRILL (Oven & Grill Cleaner)</strong>: This bio-powered, high-alkaline formula uses D-Limonene bio-solvent to cut through baked-on grease and carbon without the need for chlorinated or caustic fumes.</li>
+          <li><strong>VIVE-DISH (Dish Washing Liquid)</strong>: A concentrated, plant-derived dishwashing liquid that is tough on grease but gentle on hands. Its skin-safe pH and glycerin conditioning make it ideal for frequent use.</li>
         </ul>
 
         <h2>Benefits for Your Windsor-Essex Kitchen</h2>
@@ -193,34 +441,35 @@
         <ul>
           <li><strong>Superior Cleaning Power</strong>: Our bio-based formulas are engineered to effectively remove the toughest kitchen messes, ensuring sparkling clean surfaces and equipment.</li>
           <li><strong>Enhanced Worker Safety</strong>: By eliminating harsh fumes and caustic chemicals, we contribute to a healthier and more comfortable working environment for your kitchen staff.</li>
-          <li><strong>Cost-Effective Solutions</strong>: Our concentrated products offer exceptional value, significantly reducing your cost per litre compared to ready-to-use alternatives, which is crucial for managing kitchen operational budgets.</li>
-          <li><strong>Environmental Responsibility</strong>: Biodegradable ingredients and safer formulations support better drain compliance and reduce your kitchen's environmental footprint, aligning with local sustainability efforts.</li>
+          <li><strong>Cost-Effective Solutions</strong>: Our concentrated products offer exceptional value, significantly reducing your cost per litre compared to ready-to-use alternatives.</li>
+          <li><strong>Environmental Responsibility</strong>: Biodegradable ingredients and safer formulations support better drain compliance and reduce your kitchen's environmental footprint.</li>
           <li><strong>Local Support</strong>: As a Windsor-based company, we offer responsive service and understand the specific needs and regulations of commercial kitchens in our community.</li>
         </ul>
 
         <h2>Conclusion</h2>
         <p>For commercial kitchens in Windsor-Essex, VIVE BIOSOLUTION is the trusted partner for achieving unparalleled hygiene and operational efficiency. Our bio-based cleaning chemistry delivers powerful results without the harsh trade-offs, helping you maintain a pristine kitchen environment while protecting your staff and the planet. Make the smart switch today and experience the VIVE BIOSOLUTION difference.</p>
 
-        <p>Ready to elevate your kitchen's cleanliness? <a href="contact.html">Contact us today</a> to learn more about our commercial kitchen product line and request a sample.</p>
-      </article>
+        <p>Ready to elevate your kitchen's cleanliness? <a href="/contact">Contact us today</a> to learn more about our commercial kitchen product line and request a sample.</p>
+      </div>
+    </div>
+  </div>
 
-      <!-- ARTICLE 3: INSTITUTIONAL CLEANING -->
-      <article class="blog-post">
-        <div class="blog-number">3</div>
-        <div class="blog-header-content">
-          <h1>Institutional Cleaning in Windsor-Essex: Prioritizing Health and Sustainability</h1>
-          <p class="blog-meta">Published by VIVE BIOSOLUTION | May 25, 2026</p>
-        </div>
-
+  <!-- Modal 3: Institutional Cleaning -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+      <h1 class="modal-title">Institutional Cleaning in Windsor-Essex: Prioritizing Health and Sustainability</h1>
+      <p class="modal-meta">Published by VIVE BIOSOLUTION | May 25, 2026</p>
+      <div class="modal-body">
         <p>Institutions in Windsor-Essex—from schools and hospitals to government buildings and community centers—play a vital role in our daily lives. Maintaining these facilities requires more than just surface-level cleaning; it demands a commitment to health, safety, and environmental sustainability. Traditional cleaning products often fall short, introducing harsh chemicals that can compromise indoor air quality and pose risks to sensitive populations. VIVE BIOSOLUTION, a local Windsor company, provides bio-based, concentrated cleaning solutions designed specifically for the rigorous demands of institutional environments in our region.</p>
 
         <h2>The Challenges of Institutional Cleaning in Our Community</h2>
         <p>Institutions in Windsor-Essex face unique cleaning challenges:</p>
         <ul>
           <li><strong>High Traffic & Diverse Populations</strong>: Schools and healthcare facilities see constant foot traffic, increasing the spread of germs. They also serve vulnerable populations, including children and patients, who are more susceptible to chemical sensitivities.</li>
-          <li><strong>Indoor Air Quality</strong>: Harsh chemicals and strong fragrances can trigger allergies and respiratory issues, making low-VOC and ammonia-free products essential for maintaining healthy indoor environments.</li>
-          <li><strong>Budget Constraints</strong>: Public and non-profit institutions often operate under strict budgets, necessitating cost-effective cleaning solutions that deliver high performance without breaking the bank.</li>
-          <li><strong>Environmental Responsibility</strong>: There is a growing expectation for institutions to adopt sustainable practices, including the use of eco-friendly cleaning products that minimize environmental impact.</li>
+          <li><strong>Indoor Air Quality</strong>: Harsh chemicals and strong fragrances can trigger allergies and respiratory issues, making low-VOC and ammonia-free products essential.</li>
+          <li><strong>Budget Constraints</strong>: Public and non-profit institutions often operate under strict budgets, necessitating cost-effective cleaning solutions that deliver high performance.</li>
+          <li><strong>Environmental Responsibility</strong>: There is a growing expectation for institutions to adopt sustainable practices, including the use of eco-friendly cleaning products.</li>
         </ul>
 
         <h2>VIVE BIOSOLUTION: Tailored for Institutional Excellence</h2>
@@ -228,10 +477,10 @@
 
         <h3>Key Products for Institutional Facilities:</h3>
         <ul>
-          <li><strong>VIVE-CLEAN (All Purpose Cleaner)</strong>: A highly concentrated, bio-based cleaner that is safe and effective on most hard surfaces. One 4L jug makes 40 litres of ready-to-use solution, offering significant cost savings for budget-conscious institutions.</li>
-          <li><strong>VIVE-GLASS (Glass Cleaner)</strong>: An ammonia-free formula that delivers a streak-free finish without harsh fumes. Ideal for offices, patient rooms, and classrooms, it ensures a safer environment for occupants and staff.</li>
+          <li><strong>VIVE-CLEAN (All Purpose Cleaner)</strong>: A highly concentrated, bio-based cleaner that is safe and effective on most hard surfaces. One 4L jug makes 40 litres of ready-to-use solution, offering significant cost savings.</li>
+          <li><strong>VIVE-GLASS (Glass Cleaner)</strong>: An ammonia-free formula that delivers a streak-free finish without harsh fumes. Ideal for offices, patient rooms, and classrooms.</li>
           <li><strong>VIVE-FLOOR (Floor Cleaner)</strong>: A biodegradable, cost-effective concentrate designed for hard floors. It provides excellent cleaning performance while supporting green cleaning initiatives.</li>
-          <li><strong>VIVE-SOAP (Hand Soap)</strong>: Formulated with plant-derived surfactants and a skin-matched pH, it ensures effective hand hygiene without causing dryness or irritation, crucial for high-demand environments like schools and hospitals.</li>
+          <li><strong>VIVE-SOAP (Hand Soap)</strong>: Formulated with plant-derived surfactants and a skin-matched pH, it ensures effective hand hygiene without causing dryness or irritation.</li>
         </ul>
 
         <h2>The Benefits of Choosing Local Bio-Based Chemistry</h2>
@@ -246,17 +495,18 @@
         <h2>Conclusion</h2>
         <p>For institutional facilities in Windsor-Essex, VIVE BIOSOLUTION offers the ideal balance of performance, safety, and sustainability. Our bio-based cleaning chemistry ensures that your facility is not only clean but also a healthy environment for everyone who enters. Make the switch to local, professional cleaning solutions and experience the difference.</p>
 
-        <p>Ready to enhance your facility's cleaning program? <a href="contact.html">Contact us today</a> to discuss your institutional cleaning needs.</p>
-      </article>
+        <p>Ready to enhance your facility's cleaning program? <a href="/contact">Contact us today</a> to discuss your institutional cleaning needs.</p>
+      </div>
+    </div>
+  </div>
 
-      <!-- ARTICLE 4: INDUSTRIAL CLEANING SOLUTIONS IN WINDSOR-ESSEX -->
-      <article class="blog-post">
-        <div class="blog-number">4</div>
-        <div class="blog-header-content">
-          <h1>Industrial Cleaning Solutions in Windsor-Essex: Why Local Expertise Matters</h1>
-          <p class="blog-meta">Published by VIVE BIOSOLUTION | June 1, 2026</p>
-        </div>
-
+  <!-- Modal 4: Industrial Cleaning Solutions -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal4')">&times;</span>
+      <h1 class="modal-title">Industrial Cleaning Solutions in Windsor-Essex: Why Local Expertise Matters</h1>
+      <p class="modal-meta">Published by VIVE BIOSOLUTION | June 1, 2026</p>
+      <div class="modal-body">
         <p>Windsor-Essex is a hub of industrial activity, from automotive manufacturing to advanced fabrication. In these demanding environments, maintaining cleanliness and operational efficiency is paramount. Choosing the right industrial cleaning solutions isn't just about finding a powerful product; it's about partnering with a provider who understands the unique challenges and regulatory landscape of our local industrial sector. VIVE BIOSOLUTION, proudly based in Windsor, Ontario, offers specialized bio-based cleaning chemistry designed to meet these exact needs.</p>
 
         <h2>The Windsor-Essex Industrial Landscape: Unique Cleaning Demands</h2>
@@ -275,8 +525,8 @@
         <p>Our flagship industrial degreaser, VIVE-SHIFT, is a prime example of our commitment to local industry:</p>
         <ul>
           <li><strong>Engineered for Local Needs</strong>: Developed with insights from Windsor-Essex industrial partners, it's formulated to tackle the specific types of contaminants found in our local manufacturing and fabrication facilities.</li>
-          <li><strong>Butyl-Free & Low VOC</strong>: We prioritize worker safety. VIVE-SHIFT is free from 2-Butoxyethanol (butyl) and has a low VOC content, ensuring a safer working environment in enclosed industrial spaces.</li>
-          <li><strong>Bio-Based & Biodegradable</strong>: Our commitment to the environment means using plant-derived surfactants and D-Limonene bio-solvents, which are effective yet biodegradable, aiding in local drain compliance.</li>
+          <li><strong>Butyl-Free & Low VOC</strong>: We prioritize worker safety. VIVE-SHIFT is free from 2-Butoxyethanol (butyl) and has a low VOC content, ensuring a safer working environment.</li>
+          <li><strong>Bio-Based & Biodegradable</strong>: Our commitment to the environment means using plant-derived surfactants and D-Limonene bio-solvents, which are effective yet biodegradable.</li>
           <li><strong>Made in Canada</strong>: Proudly manufactured right here in Windsor, Ontario, ensuring quality control and supporting the local economy.</li>
         </ul>
 
@@ -292,100 +542,106 @@
         <h2>Conclusion</h2>
         <p>For industrial businesses in Windsor-Essex, choosing VIVE BIOSOLUTION means opting for superior cleaning performance, enhanced worker safety, and a commitment to local sustainability. We are more than just a supplier; we are your local partner in maintaining a clean, efficient, and compliant industrial environment.</p>
 
-        <p>Ready to optimize your industrial cleaning? <a href="contact.html">Contact VIVE BIOSOLUTION today</a> to discuss your needs and discover the difference local expertise makes.</p>
-      </article>
-
-      <!-- ARTICLE 5: INSTITUTIONAL CLEANING IN WINDSOR-ESSEX -->
-      <article class="blog-post">
-        <div class="blog-number">5</div>
-        <div class="blog-header-content">
-          <h1>Institutional Cleaning in Windsor-Essex: Prioritizing Health and Sustainability</h1>
-          <p class="blog-meta">Published by VIVE BIOSOLUTION | June 1, 2026</p>
-        </div>
-
-        <p>Institutions in Windsor-Essex—from schools and hospitals to government buildings and community centers—play a vital role in our daily lives. Maintaining these facilities requires more than just surface-level cleaning; it demands a commitment to health, safety, and environmental sustainability. Traditional cleaning products often fall short, introducing harsh chemicals that can compromise indoor air quality and pose risks to sensitive populations. VIVE BIOSOLUTION, a local Windsor company, provides bio-based, concentrated cleaning solutions designed specifically for the rigorous demands of institutional environments in our region.</p>
-
-        <h2>The Challenges of Institutional Cleaning in Our Community</h2>
-        <p>Institutions in Windsor-Essex face unique cleaning challenges:</p>
-        <ul>
-          <li><strong>High Traffic & Diverse Populations</strong>: Schools and healthcare facilities see constant foot traffic, increasing the spread of germs. They also serve vulnerable populations, including children and patients, who are more susceptible to chemical sensitivities.</li>
-          <li><strong>Indoor Air Quality</strong>: Harsh chemicals and strong fragrances can trigger allergies and respiratory issues, making low-VOC and ammonia-free products essential for maintaining healthy indoor environments.</li>
-          <li><strong>Budget Constraints</strong>: Public and non-profit institutions often operate under strict budgets, necessitating cost-effective cleaning solutions that deliver high performance without breaking the bank.</li>
-          <li><strong>Environmental Responsibility</strong>: There is a growing expectation for institutions to adopt sustainable practices, including the use of eco-friendly cleaning products that minimize environmental impact.</li>
-        </ul>
-
-        <h2>VIVE BIOSOLUTION: Tailored for Institutional Excellence</h2>
-        <p>VIVE BIOSOLUTION provides a suite of concentrated, bio-based products that deliver exceptional cleaning performance for institutional settings, ensuring cleanliness, safety, and cost savings.</p>
-
-        <h3>Key Products for Institutional Facilities:</h3>
-        <ul>
-          <li><strong>VIVE-CLEAN (All Purpose Cleaner)</strong>: A highly concentrated, bio-based cleaner that is safe and effective on most hard surfaces. One 4L jug makes 40 litres of ready-to-use solution, offering significant cost savings for budget-conscious institutions.</li>
-          <li><strong>VIVE-GLASS (Glass Cleaner)</strong>: An ammonia-free formula that delivers a streak-free finish without harsh fumes. Ideal for offices, patient rooms, and classrooms, it ensures a safer environment for occupants and staff.</li>
-          <li><strong>VIVE-FLOOR (Floor Cleaner)</strong>: A biodegradable, cost-effective concentrate designed for hard floors. It provides excellent cleaning performance while supporting green cleaning initiatives.</li>
-          <li><strong>VIVE-SOAP (Hand Soap)</strong>: Formulated with plant-derived surfactants and a skin-matched pH, it ensures effective hand hygiene without causing dryness or irritation, crucial for high-demand environments like schools and hospitals.</li>
-        </ul>
-
-        <h2>The Benefits of Choosing Local Bio-Based Chemistry</h2>
-        <p>By partnering with VIVE BIOSOLUTION, institutions in Windsor-Essex gain several advantages:</p>
-        <ul>
-          <li><strong>Healthier Environments</strong>: Our low-VOC, bio-based formulas reduce airborne irritants and chemical exposure, creating safer spaces for students, patients, and staff.</li>
-          <li><strong>Cost Efficiency</strong>: Concentrated products significantly lower the cost per litre, helping institutions maximize their cleaning budgets.</li>
-          <li><strong>Sustainability</strong>: Biodegradable ingredients and local manufacturing reduce the environmental footprint, aligning with community sustainability goals.</li>
-          <li><strong>Local Support</strong>: As a Windsor-based company, we provide responsive, personalized support and understand the specific needs of our local institutions.</li>
-        </ul>
-
-        <h2>Conclusion</h2>
-        <p>For institutional facilities in Windsor-Essex, VIVE BIOSOLUTION offers the ideal balance of performance, safety, and sustainability. Our bio-based cleaning chemistry ensures that your facility is not only clean but also a healthy environment for everyone who enters. Make the switch to local, professional cleaning solutions and experience the difference.</p>
-
-        <p>Ready to enhance your facility's cleaning program? <a href="contact.html">Contact us today</a> to discuss your institutional cleaning needs.</p>
-      </article>
-
-      <!-- ARTICLE 6: COMMERCIAL KITCHEN CLEANING IN WINDSOR-ESSEX -->
-      <article class="blog-post">
-        <div class="blog-number">6</div>
-        <div class="blog-header-content">
-          <h1>Commercial Kitchen Cleaning in Windsor-Essex: Achieving Hygiene and Efficiency</h1>
-          <p class="blog-meta">Published by VIVE BIOSOLUTION | June 1, 2026</p>
-        </div>
-
-        <p>Commercial kitchens in Windsor-Essex, from bustling restaurants to catering services, operate under immense pressure to maintain impeccable hygiene standards. Beyond aesthetics, cleanliness is critical for food safety, operational flow, and customer satisfaction. However, many traditional kitchen cleaners come with harsh fumes and environmental concerns. VIVE BIOSOLUTION, your local Windsor-based partner, offers advanced bio-based cleaning solutions specifically formulated to meet the rigorous demands of commercial kitchens, ensuring powerful cleaning without compromise.</p>
-
-        <h2>The Unique Cleaning Demands of Windsor-Essex Commercial Kitchens</h2>
-        <p>Local commercial kitchens face distinct challenges:</p>
-        <ul>
-          <li><strong>Strict Health Regulations</strong>: Adherence to local health and safety codes is non-negotiable to prevent foodborne illnesses and ensure compliance.</li>
-          <li><strong>Stubborn Grease & Carbon</strong>: Ovens, grills, fryers, and exhaust hoods accumulate tough grease and carbonized food residue that require specialized, effective removal.</li>
-          <li><strong>Worker Comfort & Safety</strong>: Kitchen environments can be hot and enclosed. Cleaning solutions that produce harsh fumes can negatively impact staff health and morale.</li>
-          <li><strong>Drain Management</strong>: Fats, oils, and grease (FOG) are a constant battle, requiring solutions that prevent costly clogs and support municipal wastewater regulations.</li>
-        </ul>
-
-        <h2>VIVE BIOSOLUTION: The Smart Choice for Local Commercial Kitchens</h2>
-        <p>VIVE BIOSOLUTION provides a range of concentrated, bio-based products designed to tackle these challenges head-on, delivering superior results while prioritizing safety and sustainability for Windsor-Essex businesses.</p>
-
-        <h3>Key Products for Commercial Kitchens:</h3>
-        <ul>
-          <li><strong>VIVE-GRILL (Oven & Grill Cleaner)</strong>: This bio-powered, high-alkaline formula uses D-Limonene bio-solvent to cut through baked-on grease and carbon without the need for chlorinated or caustic fumes. It ensures a thorough clean for your ovens, grills, and fryer exteriors, making it safer for use in food prep areas.</li>
-          <li><strong>VIVE-DISH (Dish Washing Liquid)</strong>: A concentrated, plant-derived dishwashing liquid that is tough on grease but gentle on hands. Its skin-safe pH and glycerin conditioning make it ideal for frequent use, while its biodegradable surfactants ensure effective cleaning and better drain compliance.</li>
-        </ul>
-
-        <h2>Benefits for Your Windsor-Essex Kitchen</h2>
-        <p>Choosing VIVE BIOSOLUTION for your commercial kitchen means:</p>
-        <ul>
-          <li><strong>Superior Cleaning Power</strong>: Our bio-based formulas are engineered to effectively remove the toughest kitchen messes, ensuring sparkling clean surfaces and equipment.</li>
-          <li><strong>Enhanced Worker Safety</strong>: By eliminating harsh fumes and caustic chemicals, we contribute to a healthier and more comfortable working environment for your kitchen staff.</li>
-          <li><strong>Cost-Effective Solutions</strong>: Our concentrated products offer exceptional value, significantly reducing your cost per litre compared to ready-to-use alternatives, which is crucial for managing kitchen operational budgets.</li>
-          <li><strong>Environmental Responsibility</strong>: Biodegradable ingredients and safer formulations support better drain compliance and reduce your kitchen's environmental footprint, aligning with local sustainability efforts.</li>
-          <li><strong>Local Support</strong>: As a Windsor-based company, we offer responsive service and understand the specific needs and regulations of commercial kitchens in our community.</li>
-        </ul>
-
-        <h2>Conclusion</h2>
-        <p>For commercial kitchens in Windsor-Essex, VIVE BIOSOLUTION is the trusted partner for achieving unparalleled hygiene and operational efficiency. Our bio-based cleaning chemistry delivers powerful results without the harsh trade-offs, helping you maintain a pristine kitchen environment while protecting your staff and the planet. Make the smart switch today and experience the VIVE BIOSOLUTION difference.</p>
-
-        <p>Ready to elevate your kitchen's cleanliness? <a href="contact.html">Contact us today</a> to learn more about our commercial kitchen product line and request a sample.</p>
-      </article>
-
+        <p>Ready to optimize your industrial cleaning? <a href="/contact">Contact VIVE BIOSOLUTION today</a> to discuss your needs and discover the difference local expertise makes.</p>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Modal 5: Bio-Based Cleaning Benefits -->
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal5')">&times;</span>
+      <h1 class="modal-title">Bio-Based Cleaning: The Sustainable & Cost-Effective Choice for Windsor-Essex Businesses</h1>
+      <p class="modal-meta">Published by VIVE BIOSOLUTION | June 2, 2026</p>
+      <div class="modal-body">
+        <p>Businesses in Windsor-Essex are increasingly seeking solutions that are not only effective but also environmentally responsible and economically sound. In the realm of cleaning chemistry, bio-based solutions offer a compelling alternative to traditional harsh chemicals. VIVE BIOSOLUTION, a local leader in professional cleaning chemistry, champions this shift, providing products that deliver powerful results while promoting sustainability and significant cost savings for industrial, institutional, and commercial kitchens across our community.</p>
+
+        <h2>The Environmental Imperative in Windsor-Essex</h2>
+        <p>Our region, with its strong industrial heritage and beautiful natural surroundings, has a vested interest in environmental protection. Traditional cleaning agents often contain:</p>
+        <ul>
+          <li><strong>Petroleum-based solvents</strong>: Derived from non-renewable resources.</li>
+          <li><strong>Harsh acids and alkalis</strong>: Can be corrosive and harmful to aquatic life if improperly discharged.</li>
+          <li><strong>Volatile Organic Compounds (VOCs)</strong>: Contribute to air pollution and can impact indoor air quality.</li>
+        </ul>
+
+        <p>Bio-based cleaning solutions, like those from VIVE BIOSOLUTION, offer a greener path forward. They are formulated with ingredients derived from plants, microbes, and other renewable biological sources, significantly reducing their environmental footprint.</p>
+
+        <h2>Economic Advantages: Beyond Just Green</h2>
+        <p>While environmental benefits are clear, the economic advantages of switching to bio-based, concentrated cleaning solutions are equally compelling for Windsor-Essex businesses:</p>
+        <ul>
+          <li><strong>Reduced Product Consumption</strong>: Our concentrated formulas mean one 4L jug can yield up to 84 litres of ready-to-use solution. This drastically cuts down on the amount of product you need to purchase and store.</li>
+          <li><strong>Lower Cost Per Litre</strong>: By diluting concentrates on-site, businesses achieve a significantly lower cost per litre compared to buying pre-mixed, ready-to-use cleaners.</li>
+          <li><strong>Reduced Waste</strong>: Less product means less packaging waste, contributing to lower disposal costs and a smaller carbon footprint.</li>
+          <li><strong>Improved Drain Compliance</strong>: Biodegradable formulas are gentler on plumbing systems and wastewater treatment facilities, helping businesses meet local drain discharge regulations.</li>
+          <li><strong>Enhanced Worker Safety</strong>: Safer products lead to fewer workplace incidents, reduced need for personal protective equipment (PPE), and less lost time due to chemical exposure.</li>
+        </ul>
+
+        <h2>VIVE BIOSOLUTION: Leading the Way in Windsor-Essex</h2>
+        <p>At VIVE BIOSOLUTION, we are committed to providing Windsor-Essex businesses with cleaning solutions that are both high-performing and responsible. Our products, such as VIVE-SHIFT, VIVE-CLEAN, and VIVE-GRILL, are designed to tackle the toughest industrial, institutional, and commercial kitchen messes using the power of bio-based chemistry.</p>
+
+        <h3>Our Commitment to Sustainability:</h3>
+        <ul>
+          <li><strong>Plant-Derived Ingredients</strong>: Utilizing renewable resources for our surfactants and solvents.</li>
+          <li><strong>Biodegradable Formulas</strong>: Ensuring our products break down naturally, minimizing environmental impact.</li>
+          <li><strong>Butyl-Free & Low VOC</strong>: Protecting both the environment and the health of your employees.</li>
+          <li><strong>Local Manufacturing</strong>: Reducing transportation emissions by producing our products right here in Windsor, Ontario.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>For businesses in Windsor-Essex looking to optimize their cleaning operations, reduce costs, and champion environmental stewardship, VIVE BIOSOLUTION offers the ideal partnership. Embrace the future of cleaning with solutions that are powerful, safe, and sustainable. Make the smart choice for your business and our community.</p>
+
+        <p>Ready to discover the benefits of bio-based cleaning? <a href="/contact">Contact VIVE BIOSOLUTION today</a> to learn more about our product lines and how we can help your business thrive.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Local Supplier Advantage -->
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal6')">&times;</span>
+      <h1 class="modal-title">Why Choose a Local Cleaning Supplier in Windsor-Essex? The VIVE BIOSOLUTION Advantage</h1>
+      <p class="modal-meta">Published by VIVE BIOSOLUTION | June 3, 2026</p>
+      <div class="modal-body">
+        <p>In the competitive landscape of industrial, institutional, and commercial cleaning, businesses often face a choice between large national distributors and local suppliers. For companies in Windsor-Essex, opting for a local partner like VIVE BIOSOLUTION offers distinct advantages that go beyond just convenience. It's about fostering community, ensuring responsive service, and benefiting from tailored solutions that understand the unique needs of our region.</p>
+
+        <h2>The Value of Local Partnership in Windsor-Essex</h2>
+        <p>Choosing a local cleaning supplier means more than just proximity; it means a deeper connection to the community and a more personalized approach to your cleaning needs.</p>
+
+        <h3>1. Responsive and Personalized Service</h3>
+        <ul>
+          <li><strong>Quick Turnaround</strong>: Local suppliers can often provide faster delivery and more immediate support. When you have an urgent need or a question, a local team is just a call away, often able to visit your site in Windsor-Essex quickly.</li>
+          <li><strong>Direct Communication</strong>: You're not just a number. Local businesses thrive on relationships, offering personalized attention and direct access to decision-makers who understand your specific operational challenges.</li>
+          <li><strong>Flexible Solutions</strong>: Local suppliers are often more agile and willing to customize solutions or delivery schedules to fit your unique requirements, something larger corporations might struggle with.</li>
+        </ul>
+
+        <h3>2. Understanding Local Regulations and Environment</h3>
+        <ul>
+          <li><strong>Regulatory Compliance</strong>: Windsor-Essex has specific environmental and safety regulations. A local supplier like VIVE BIOSOLUTION is inherently familiar with these standards, ensuring that the products and advice they provide help you stay compliant.</li>
+          <li><strong>Regional Expertise</strong>: We understand the types of industries prevalent in Windsor-Essex – from automotive to healthcare – and the specific cleaning challenges they present.</li>
+        </ul>
+
+        <h3>3. Supporting the Local Economy</h3>
+        <ul>
+          <li><strong>Job Creation</strong>: Every dollar spent with a local business circulates within the community, supporting local jobs and families in Windsor-Essex.</li>
+          <li><strong>Community Investment</strong>: Local companies are often more invested in the well-being of their community, participating in local initiatives and contributing to the overall economic health of the region.</li>
+          <li><strong>Reduced Environmental Impact</strong>: Shorter supply chains mean less transportation, which translates to reduced fuel consumption and lower carbon emissions, benefiting our local environment.</li>
+        </ul>
+
+        <h3>4. VIVE BIOSOLUTION: Proudly Windsor-Essex</h3>
+        <p>As a company proudly based and manufactured in Windsor, Ontario, VIVE BIOSOLUTION embodies these local advantages. We are not just a supplier; we are your neighbors, committed to the success and health of our shared community.</p>
+        <ul>
+          <li><strong>Made in Canada</strong>: Our products are engineered and produced right here, ensuring quality control and supporting Canadian manufacturing.</li>
+          <li><strong>Bio-Based Solutions</strong>: We offer environmentally responsible cleaning chemistry that aligns with the growing demand for sustainable practices in Windsor-Essex.</li>
+          <li><strong>Dedicated to Our Clients</strong>: Our reputation is built on the satisfaction of our local clients. We are committed to providing superior products and unparalleled service to every business in our region.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>For businesses in Windsor-Essex, the choice of a cleaning supplier can have a significant impact on operational efficiency, regulatory compliance, and community well-being. By choosing a local partner like VIVE BIOSOLUTION, you gain a responsive, knowledgeable, and invested ally dedicated to providing the best bio-based cleaning solutions tailored to our local needs. Make the smart choice for your business and our community.</p>
+
+        <p>Ready to experience the VIVE BIOSOLUTION local advantage? <a href="/contact">Contact us today</a> to discuss your cleaning needs.</p>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="container footer-grid">
@@ -397,9 +653,9 @@
 
       <div>
         <h4>Products</h4>
-        <p><a href="products.html" style="color: #cbd5e1; text-decoration: none;">Industrial Cleaners</a></p>
-        <p><a href="products.html" style="color: #cbd5e1; text-decoration: none;">Institutional Cleaners</a></p>
-        <p><a href="products.html" style="color: #cbd5e1; text-decoration: none;">Kitchen Cleaners</a></p>
+        <p><a href="/products" style="color: #cbd5e1; text-decoration: none;">Industrial Cleaners</a></p>
+        <p><a href="/products" style="color: #cbd5e1; text-decoration: none;">Institutional Cleaners</a></p>
+        <p><a href="/products" style="color: #cbd5e1; text-decoration: none;">Kitchen Cleaners</a></p>
       </div>
 
       <div>
@@ -422,6 +678,23 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+    }
+  </script>
 </body>
 </html>

@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GXRRZ2C973"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-GXRRZ2C973');
   </script>
-</head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact VIVE BIOSOLUTION for professional bio-based cleaning solutions. Call +1 519-992-5101 or request a sample. Located in Windsor, Ontario." />
+  <meta name="description" content="Contact Vive Biosolution Corporation in Windsor, Ontario for product inquiries, samples, 4L jugs, 20L pails and bulk professional cleaning product supply." />
   <meta name="keywords" content="contact cleaning supplier, industrial degreaser supplier, commercial kitchen cleaner supplier, Windsor Ontario" />
   <meta name="author" content="VIVE BIOSOLUTION" />
   <meta property="og:title" content="Contact VIVE BIOSOLUTION | Professional Cleaning Solutions" />
   <meta property="og:description" content="Get in touch with VIVE BIOSOLUTION for product inquiries, samples, and bulk orders." />
   <meta property="og:type" content="website" />
-  <title>Contact VIVE BIOSOLUTION | Professional Cleaning Solutions | Windsor, Ontario</title>
+  <link rel="canonical" href="https://vivebiosolution.ca/contact" />
+  <meta property="og:url" content="https://vivebiosolution.ca/contact" />
+  <meta property="og:image" content="https://vivebiosolution.ca/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Contact Vive Biosolution Corporation | Request Samples & Bulk Supply</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,10 +34,10 @@
       </div>
       <h1>Contact Us</h1>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="blog.html">Blog</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/products">Products</a>
+        <a href="/blog">Blog</a>
       </nav>
     </div>
   </header>
@@ -44,22 +47,24 @@
       <h2 class="section-title">Ready To Clean Smarter?</h2>
       <p style="font-size: 18px; color: #475569; margin-bottom: 30px;">
         Have questions about our products? Want to place an order? <br>
-        <strong style="color: #22c55e; font-size: 20px;">Call us at +1 519-992-5101</strong> or fill out the form below.
+        <strong style="color: #22c55e; font-size: 20px;">Call us at <a href="tel:+15199925101">+1 519-992-5101</a></strong> or fill out the form below.
       </p>
 
-      <form class="contact-form">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="text" placeholder="Business Name" required>
-        <input type="text" placeholder="Product Interested In" id="product-field">
-        <textarea placeholder="Tell us about your cleaning challenges or product inquiry..." required></textarea>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
+        <input type="text" name="name" placeholder="Full Name" autocomplete="name" required>
+        <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
+        <input type="text" name="business" placeholder="Business Name" autocomplete="organization" required>
+        <input type="text" name="product" placeholder="Product Interested In" id="product-field">
+        <textarea name="message" placeholder="Tell us about your cleaning challenges or product inquiry..." required></textarea>
         <button type="submit" class="btn-dark">Submit Inquiry</button>
       </form>
 
       <div style="margin-top: 50px; padding: 30px; background: #f0fdf4; border-radius: 15px; border-left: 4px solid #22c55e;">
         <h3 style="color: #022c0d; margin-bottom: 15px;">Other Ways to Reach Us</h3>
-        <p style="color: #475569; margin: 10px 0;"><strong>Phone:</strong> +1 519-992-5101</p>
-        <p style="color: #475569; margin: 10px 0;"><strong>Email:</strong> info@vivebiosolution.ca</p>
+        <p style="color: #475569; margin: 10px 0;"><strong>Phone:</strong> <a href="tel:+15199925101">+1 519-992-5101</a></p>
+        <p style="color: #475569; margin: 10px 0;"><strong>Email:</strong> <a href="mailto:info@vivebiosolution.ca">info@vivebiosolution.ca</a></p>
         <p style="color: #475569; margin: 10px 0;"><strong>Location:</strong> Windsor, Ontario, Canada</p>
       </div>
     </div>
@@ -104,7 +109,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const product = urlParams.get('product');
     if (product) {
-      document.getElementById('product-field').value = product.replace('-', ' ').toUpperCase();
+      document.getElementById('product-field').value = product.replaceAll('-', ' ').toUpperCase();
     }
   </script>
   <script src="script.js"></script>
