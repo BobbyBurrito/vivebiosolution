@@ -28,53 +28,49 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": [
-    "Organization",
-    "LocalBusiness"
-  ],
-  "name": "Vive Biosolution Corporation",
-  "url": "https://vivebiosolution.ca/",
-  "logo": "https://vivebiosolution.ca/logo.png",
-  "image": "https://vivebiosolution.ca/logo.png",
-  "email": "info@vivebiosolution.ca",
-  "telephone": "+1-519-992-5101",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Windsor",
-    "addressRegion": "ON",
-    "addressCountry": "CA"
-  },
-  "areaServed": [
-    "Windsor",
-    "Windsor-Essex",
-    "Tecumseh",
-    "LaSalle",
-    "Amherstburg",
-    "Leamington",
-    "Chatham-Kent",
-    "Ontario"
-  ],
-  "description": "Windsor-based manufacturer and supplier of professional bio-derived cleaning products for industrial, commercial, janitorial, food-service and facility maintenance use.",
-  "makesOffer": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Product",
-        "name": "VIVE-SHIFT Industrial Degreaser"
-      }
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://vivebiosolution.ca/#organization",
+      "name": "Vive Biosolution Corporation",
+      "url": "https://vivebiosolution.ca/",
+      "logo": "https://vivebiosolution.ca/logo.png",
+      "image": "https://vivebiosolution.ca/logo.png",
+      "email": "info@vivebiosolution.ca",
+      "telephone": "+1-519-992-5101",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Windsor",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      },
+      "areaServed": [
+        "Windsor",
+        "Windsor-Essex",
+        "Tecumseh",
+        "LaSalle",
+        "Amherstburg",
+        "Leamington",
+        "Chatham-Kent",
+        "Ontario"
+      ],
+      "description": "Windsor-based manufacturer and supplier of professional bio-derived cleaning products for industrial, commercial, janitorial, food-service and facility maintenance use.",
+      "knowsAbout": [
+        "Industrial degreasers",
+        "Ammonia-free glass cleaners",
+        "Commercial floor cleaners",
+        "All-purpose cleaners",
+        "Commercial kitchen cleaners",
+        "Bulk cleaning products"
+      ]
     },
     {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Product",
-        "name": "VIVE-GLASS Ammonia-Free Glass Cleaner"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Product",
-        "name": "VIVE-FLOOR Commercial Floor Cleaner"
+      "@type": "WebSite",
+      "@id": "https://vivebiosolution.ca/#website",
+      "url": "https://vivebiosolution.ca/",
+      "name": "Vive Biosolution Corporation",
+      "publisher": {
+        "@id": "https://vivebiosolution.ca/#organization"
       }
     }
   ]
