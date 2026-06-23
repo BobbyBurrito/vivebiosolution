@@ -27,6 +27,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Netlify Forms detection form. Keep this hidden form in the static HTML so Netlify detects the contact form during deploy. -->
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="contact">
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <input type="tel" name="phone">
+    <input type="text" name="business">
+    <input type="text" name="product">
+    <textarea name="message"></textarea>
+    <input type="text" name="bot-field">
+  </form>
+
   <header class="simple-header">
     <div class="container">
       <div class="logo-container" style="justify-content: center; margin-bottom: 20px;">
@@ -52,9 +64,13 @@
 
       <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
         <input type="hidden" name="form-name" value="contact">
-        <p style="display:none;"><label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <p style="display:none;">
+          <label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+
         <input type="text" name="name" placeholder="Full Name" autocomplete="name" required>
         <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
+        <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel">
         <input type="text" name="business" placeholder="Business Name" autocomplete="organization" required>
         <input type="text" name="product" placeholder="Product Interested In" id="product-field">
         <textarea name="message" placeholder="Tell us about your cleaning challenges or product inquiry..." required></textarea>
@@ -105,13 +121,12 @@
   </footer>
 
   <script>
-    // Get product from URL parameter if available
     const urlParams = new URLSearchParams(window.location.search);
     const product = urlParams.get('product');
-    if (product) {
-      document.getElementById('product-field').value = product.replaceAll('-', ' ').toUpperCase();
+    const productField = document.getElementById('product-field');
+    if (product && productField) {
+      productField.value = product.replaceAll('-', ' ').toUpperCase();
     }
   </script>
-  <script src="script.js"></script>
 </body>
 </html>
