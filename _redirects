@@ -1,0 +1,15 @@
+# Canonical host
+https://www.vivebiosolution.ca/* https://vivebiosolution.ca/:splat 301!
+
+# Clean canonical page routes
+/index.html / 301
+/about.html /about 301
+/products.html /products 301
+/blog.html /blog 301
+/contact.html /contact 301
+
+/blog_final.html /blog 301
+/blog_final /blog 301
+
+/preview / 301
+/preview.html / 301

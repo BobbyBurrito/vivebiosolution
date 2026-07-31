@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GXRRZ2C973"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GXRRZ2C973');
+  </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Request VIVE cleaning chemical samples, commercial pricing, SDS information or a comparative quote on janitorial and facility supplies in Windsor and Ontario." name="description"/>
+<meta content="VIVE BIOSOLUTION" name="author"/>
+<meta content="Contact VIVE BIOSOLUTION | Samples &amp; Commercial Supply" property="og:title">
+<meta content="Contact VIVE BIOSOLUTION for cleaning product inquiries, samples and commercial supply." property="og:description">
+<meta content="website" property="og:type"/>
+<link href="https://vivebiosolution.ca/contact" rel="canonical"/>
+<meta content="https://vivebiosolution.ca/contact" property="og:url"/>
+<meta content="https://vivebiosolution.ca/logo.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>Request a Commercial Quote, Sample or Janitorial Supply Pricing | VIVE BIOSOLUTION</title>
+<meta content="index, follow" name="robots"/>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="style.css" rel="stylesheet"/>
+</meta></meta></head>
+<body>
+<header class="simple-header">
+<div class="container">
+<div class="logo-container" style="justify-content: center; margin-bottom: 20px;">
+<img alt="VIVE BIOSOLUTION Corporation" class="site-logo" src="logo.png"/>
+</div>
+<h1>Commercial Enquiries &amp; Supply Quotes</h1>
+<nav><a href="/about">About</a><a href="/products">Products</a><a href="/industries">Industries</a><a href="/janitorial-supplies">Janitorial Supplies</a><a href="/resources">Resources</a><a href="/contact">Contact</a></nav>
+</div>
+</header>
+<section class="contact">
+<div class="container center">
+<h2 class="section-title">Ready To Clean Smarter?</h2>
+<p style="font-size: 18px; color: #475569; margin-bottom: 30px;">Request product samples, commercial pricing, technical information or a comparative quote for your current janitorial and facility supply list.</p>
+<form action="/thank-you" class="contact-form" data-netlify="true" method="POST" name="contact" netlify-honeypot="bot-field">
+<input name="form-name" type="hidden" value="contact"/>
+<p class="hidden"><label>Do not fill this out if you are human: <input name="bot-field"/></label></p>
+<input autocomplete="name" name="name" placeholder="Full Name" required="" type="text"/>
+<input autocomplete="email" name="email" placeholder="Business Email" required="" type="email"/>
+<input autocomplete="tel" name="phone" placeholder="Phone Number" type="tel"/>
+<input autocomplete="organization" name="business" placeholder="Business Name" required="" type="text"/>
+<input autocomplete="address-level2" name="city" placeholder="City / Service Location" type="text"/>
+<select aria-label="Industry" name="industry">
+<option value="">Select Industry</option>
+<option>CNC / Machining</option><option>Metal Fabrication</option><option>Tool &amp; Die</option><option>Automotive / Truck Maintenance</option><option>Commercial Kitchen / Food Service</option><option>Janitorial / Facility Maintenance</option><option>Other</option>
+</select>
+<select aria-label="Request type" name="request_type">
+<option value="">What do you need?</option><option>Request a Sample</option><option>Commercial Pricing</option><option>Product Information</option><option>SDS / Technical Documentation</option><option>Other</option><option>Janitorial Supply Quote / Cost Comparison</option>
+</select>
+<input id="product-field" name="product" placeholder="Product Interested In (if known)" type="text"/>
+<input name="usage" placeholder="Approximate Monthly Usage (optional)" type="text"/>
+<textarea name="supply_list" placeholder="For supply quotes: list current items/SKUs, pack sizes, approximate quantities or current supplier products (optional)."></textarea><textarea name="message" placeholder="Tell us what you need. For cleaning chemicals, include the soil/surface. For supply quotes, include delivery location and ordering frequency if known." required=""></textarea>
+<button class="btn-dark" type="submit">Submit Inquiry</button>
+</form>
+<div style="margin-top: 50px; padding: 30px; background: #f0fdf4; border-radius: 15px; border-left: 4px solid #22c55e;">
+<h3 style="color: #022c0d; margin-bottom: 15px;">Other Ways to Reach Us</h3>
+<p style="color: #475569; margin: 10px 0;"><strong>Phone:</strong> <a href="tel:+15199925101">+1 519-992-5101</a></p>
+<p style="color: #475569; margin: 10px 0;"><strong>Email:</strong> <a href="mailto:info@vivebiosolution.ca">info@vivebiosolution.ca</a></p>
+<p style="color: #475569; margin: 10px 0;"><strong>Location:</strong> Windsor, Ontario, Canada</p>
+</div>
+</div>
+</section>
+<footer>
+<div class="container footer-grid">
+<div>
+<h3>VIVE BIOSOLUTION</h3>
+<p>Modern industrial and commercial cleaning chemistry engineered in Windsor-Essex.</p>
+<p style="margin-top: 15px; font-weight: bold; color: #22c55e;">📞 +1 519-992-5101</p>
+</div>
+<div>
+<h4>Products</h4>
+<p>Industrial Line</p>
+<p>Commercial Line</p>
+</div>
+<div>
+<h4>Industries</h4>
+<p>CNC Shops</p>
+<p>Automotive</p>
+<p>Fabrication</p>
+</div>
+<div>
+<h4>Contact</h4>
+<p>Windsor, Ontario</p>
+<p>info@vivebiosolution.ca</p>
+<p style="margin-top: 15px; font-weight: bold; color: #22c55e;">+1 519-992-5101</p>
+</div>
+</div>
+<div class="copyright">
+      © 2026 VIVE BIOSOLUTION CORPORATION. All rights reserved.
+    </div>
+</footer>
+<script>
+    // Get product from URL parameter if available
+    const urlParams = new URLSearchParams(window.location.search);
+    const product = urlParams.get('product');
+    if (product) {
+      document.getElementById('product-field').value = product.replaceAll('-', ' ').toUpperCase();
+    }
+  </script>
+<script src="script.js"></script>
+</body>
+</html>
