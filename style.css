@@ -1399,3 +1399,47 @@ footer {
     min-height: 175px;
   }
 }
+
+
+/* V12.1 — consistent internal-page header and page intro */
+.page-intro {
+  padding: 58px 0 54px;
+  background: linear-gradient(180deg, #f7faf8 0%, #ffffff 100%);
+  border-bottom: 1px solid var(--vive-border);
+}
+.page-intro .container {
+  max-width: 1200px;
+}
+.page-intro-eyebrow {
+  margin: 0 0 12px;
+  color: var(--vive-green-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+.page-intro h1 {
+  max-width: 880px;
+  margin: 0 0 14px;
+  color: var(--vive-navy);
+  font-size: clamp(38px, 4.5vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+.page-intro > .container > p:last-child {
+  max-width: 780px;
+  margin: 0;
+  color: #5a6b79;
+  font-size: 18px;
+  line-height: 1.65;
+}
+@media (max-width: 700px) {
+  .page-intro {
+    padding: 38px 0 36px;
+  }
+  .page-intro h1 {
+    font-size: clamp(34px, 10vw, 46px);
+  }
+  .page-intro > .container > p:last-child {
+    font-size: 16px;
+  }
+}
