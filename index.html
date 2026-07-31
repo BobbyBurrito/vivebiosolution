@@ -26,8 +26,8 @@
 <meta content="7 days" name="revisit-after"/>
 <meta content="CA-ON" name="geo.region"/>
 <meta content="Windsor" name="geo.placename"/>
-<meta content="42.3149;-83.0364" name="geo.position">
-<meta content="42.3149, -83.0364" name="ICBM">
+<meta content="42.3149;-83.0364" name="geo.position"/>
+<meta content="42.3149, -83.0364" name="ICBM"/>
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
 <link href="style.css" rel="stylesheet"/>
 <script type="application/ld+json">
@@ -85,36 +85,53 @@
   ]
 }
   </script>
-</meta></meta></head>
+</head>
 <body>
-<header>
-<div class="container nav">
-<div class="logo-container">
+<header class="site-header">
+<div class="container nav-container">
+<a aria-label="VIVE BIOSOLUTION home" class="brand-link" href="/">
 <img alt="VIVE BIOSOLUTION Corporation" class="site-logo" src="logo.png"/>
-<div class="logo-text-fallback">
-<div class="logo">VIVE BIOSOLUTION</div>
-<p class="tagline">INDUSTRIAL &amp; COMMERCIAL CLEANING CHEMICALS</p>
-</div>
-</div>
-<nav><a href="/about">About</a><a href="/products">Products</a><a href="/industries">Industries</a><a href="/janitorial-supplies">Janitorial Supplies</a><a href="/resources">Resources</a><a href="/contact">Contact</a></nav>
-<button class="btn-green" onclick="location.href='/contact'">Request Sample</button>
+</a>
+<nav aria-label="Primary navigation">
+<a href="/products">Products</a>
+<a href="/industries">Industries</a>
+<a href="/janitorial-supplies">Janitorial Supplies</a>
+<a href="/resources">Resources</a>
+<a href="/about">About</a>
+<a href="/contact">Contact</a>
+</nav>
 </div>
 </header>
-<section class="hero">
-<div class="container hero-grid hero-grid-text-only">
-<div>
+<section class="hero home-hero">
+<div class="container hero-grid home-hero-grid">
+<div class="hero-copy">
 <p class="small-title">MANUFACTURED IN WINDSOR, ONTARIO</p>
-<h1>Industrial &amp; Commercial Cleaning Chemicals</h1>
-<p class="hero-text">Degreasers, surface cleaners and maintenance products for manufacturing, CNC and machine shops, metal fabrication, automotive service, commercial kitchens and facility operations.</p>
+<h1>Cleaning Chemicals &amp; Janitorial Supply</h1>
+<p class="hero-text">VIVE-manufactured cleaning chemicals and competitively sourced janitorial supplies for manufacturing, maintenance, commercial kitchens and facility operations.</p>
 <div class="hero-buttons">
-<button class="btn-green" onclick="location.href='/products'">View Products</button>
-<button class="btn-outline" onclick="location.href='/contact'">Request a Sample</button>
+<a class="btn-green" href="/products">View VIVE Products</a>
+<a class="btn-outline-dark" href="/contact?request=supply-quote">Request a Quote</a>
 </div>
-<div class="stats">
-<div class="stat-box"><h3>Industrial</h3><p>Degreasing &amp; maintenance</p></div>
-<div class="stat-box"><h3>Commercial</h3><p>Routine facility cleaning</p></div>
-<div class="stat-box"><h3>Food Service</h3><p>Kitchen cleaning products</p></div>
-<div class="stat-box"><h3>Ontario</h3><p>Windsor manufacturing</p></div>
+<div aria-label="VIVE business highlights" class="hero-trust-row">
+<div><strong>Windsor, Ontario</strong><span>Local manufacturing</span></div>
+<div><strong>Commercial Supply</strong><span>Recurring &amp; volume orders</span></div>
+<div><strong>One Purchasing Contact</strong><span>Chemicals + janitorial supply</span></div>
+</div>
+</div>
+<div aria-label="VIVE product examples" class="hero-product-showcase">
+<article class="hero-product-card hero-product-card-main">
+<img alt="VIVE-SHIFT industrial degreaser" src="vive-shift-product.jpg"/>
+<div><span>VIVE-SHIFT</span><strong>Industrial Degreaser</strong></div>
+</article>
+<div class="hero-product-mini-grid">
+<article class="hero-product-card">
+<img alt="VIVE-CLEAN all-purpose cleaner" src="vive-clean-product.jpg"/>
+<div><span>VIVE-CLEAN</span><strong>All-Purpose Cleaner</strong></div>
+</article>
+<article class="hero-product-card">
+<img alt="VIVE-FLOOR commercial floor cleaner" src="vive-floor-product.jpg"/>
+<div><span>VIVE-FLOOR</span><strong>Floor Cleaner</strong></div>
+</article>
 </div>
 </div>
 </div>
