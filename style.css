@@ -1662,3 +1662,33 @@ footer {
     height: 300px;
   }
 }
+
+
+/* V13 — SEO guide / insights system */
+.article-hero{padding:clamp(4rem,8vw,7rem) 0 3.5rem;background:#f7f9f8;border-bottom:1px solid #e2e8e5}
+.article-container{width:min(860px,calc(100% - 2.5rem));margin:0 auto}
+.article-hero h1{font-size:clamp(2.5rem,5.4vw,4.7rem);line-height:1.02;letter-spacing:-.045em;margin:.5rem 0 1.2rem;color:#102033}
+.article-deck{font-size:clamp(1.1rem,2vw,1.35rem);line-height:1.65;color:#4f5e6b;max-width:780px}
+.article-meta{margin-top:1.3rem;font-size:.86rem;color:#73808b}
+.article-evidence{margin:2rem 0 0;overflow:hidden;border-radius:18px;border:1px solid #dfe5e2}
+.article-evidence img{display:block;width:100%;max-height:520px;object-fit:cover}
+.article-body{padding:clamp(3rem,7vw,6rem) 0}
+.article-body h2{font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.15;margin:2.8rem 0 .85rem;color:#102033}
+.article-body p,.article-body li{font-size:1.05rem;line-height:1.82;color:#3f4d59}
+.article-body a:not(.btn-green){color:#0d7040;text-decoration:underline;text-underline-offset:3px}
+.article-callout{margin:2rem 0;padding:1.4rem 1.5rem;border-left:4px solid #16844a;background:#f4f8f5;border-radius:0 14px 14px 0}
+.article-callout p{margin:.45rem 0 0}
+.article-steps{padding-left:1.3rem}.article-steps li{margin:.8rem 0;padding-left:.3rem}
+.article-faq{margin-top:3.5rem;padding-top:2rem;border-top:1px solid #dfe5e2}
+.faq-item{border-bottom:1px solid #dfe5e2;padding:1rem 0}.faq-item summary{font-weight:750;color:#102033;cursor:pointer}.faq-item p{margin:.7rem 0 .2rem}
+.article-cta{margin-top:3.5rem;padding:clamp(1.6rem,4vw,2.6rem);border-radius:20px;background:#102033;color:#fff}
+.article-cta h2{color:#fff;margin:0 0 .7rem}.article-cta p{color:#dbe4ea;margin:0 0 1.25rem}
+.blog-index-section{padding:clamp(3rem,6vw,5.5rem) 0;background:#f7f9f8}
+.blog-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.blog-card{padding:1.5rem;border:1px solid #dfe5e2;border-radius:18px;background:#fff}
+.blog-card h2{font-size:1.35rem;line-height:1.25;margin:.55rem 0 .75rem}.blog-card h2 a{color:#102033;text-decoration:none}
+.blog-card p{color:#5b6874;line-height:1.65}.blog-category{font-size:.75rem!important;font-weight:800;letter-spacing:.1em;color:#16844a!important}
+.text-link{display:inline-block;margin-top:.5rem;color:#0d7040;font-weight:750;text-decoration:none}
+.blog-card-image{padding:0;overflow:hidden}.blog-card-image>img{width:100%;height:220px;object-fit:cover}.blog-card-image>div{padding:1.5rem}
+.article-before-after{margin-bottom:1rem}
+@media(max-width:850px){.blog-card-grid{grid-template-columns:1fr}.article-hero h1{font-size:clamp(2.35rem,10vw,3.7rem)}}
