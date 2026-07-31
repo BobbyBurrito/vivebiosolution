@@ -1469,3 +1469,196 @@ footer {
     padding: 1.6rem;
   }
 }
+
+
+/* V12.3 — Real-world proof & documented field-result components */
+.real-proof-section {
+  padding: clamp(4rem, 7vw, 6.5rem) 0;
+  background: #f7f9f8;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+.proof-heading {
+  max-width: 780px;
+  margin-bottom: 2rem;
+}
+.proof-heading h2 {
+  margin-bottom: .8rem;
+}
+.proof-heading > p:last-child {
+  color: #52606d;
+  line-height: 1.7;
+}
+.real-proof-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 1.25rem;
+}
+.real-proof-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #dfe5e2;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, .06);
+}
+.real-proof-card img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+.real-proof-card-wide img {
+  object-position: center 54%;
+}
+.real-proof-card figcaption {
+  padding: 1.35rem 1.5rem 1.55rem;
+}
+.real-proof-card figcaption span {
+  display: block;
+  margin-bottom: .35rem;
+  color: #16844a;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.real-proof-card figcaption strong {
+  display: block;
+  font-size: 1.08rem;
+  color: #102033;
+}
+.real-proof-card figcaption p {
+  margin: .55rem 0 0;
+  color: #5d6975;
+  line-height: 1.6;
+}
+.proof-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+.field-result-section {
+  background: #f7f9f8;
+}
+.before-after-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+  margin-top: 2rem;
+}
+.result-photo {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid #dfe5e2;
+  background: #fff;
+}
+.result-photo img {
+  display: block;
+  width: 100%;
+  height: min(600px, 60vw);
+  max-height: 600px;
+  object-fit: cover;
+}
+.result-label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+  padding: .45rem .7rem;
+  border-radius: 999px;
+  background: rgba(15,23,42,.9);
+  color: #fff;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.result-label-after {
+  background: #16844a;
+}
+.field-method-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: .8rem;
+  margin-top: 1rem;
+}
+.field-method-grid > div {
+  padding: 1rem 1.05rem;
+  border: 1px solid #dfe5e2;
+  border-radius: 14px;
+  background: #fff;
+}
+.field-method-grid span {
+  display: block;
+  margin-bottom: .3rem;
+  color: #687482;
+  font-size: .76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.field-method-grid strong {
+  color: #102033;
+}
+.field-note {
+  margin-top: 1.25rem;
+  color: #5d6975;
+  line-height: 1.7;
+  font-size: .94rem;
+}
+.case-study-feature {
+  margin: 2.25rem 0 3rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid #dfe5e2;
+  border-radius: 22px;
+  background: #f7f9f8;
+}
+.case-study-heading {
+  max-width: 800px;
+}
+.case-study-heading > p:last-child {
+  color: #5d6975;
+}
+.case-observation {
+  margin-top: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #dfe5e2;
+}
+.case-observation p {
+  color: #52606d;
+  line-height: 1.7;
+}
+.case-observation .btn-green {
+  display: inline-flex;
+  margin-top: .4rem;
+}
+
+@media (max-width: 900px) {
+  .real-proof-grid {
+    grid-template-columns: 1fr;
+  }
+  .real-proof-card img {
+    height: 360px;
+  }
+  .field-method-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (max-width: 650px) {
+  .before-after-grid,
+  .field-method-grid {
+    grid-template-columns: 1fr;
+  }
+  .result-photo img {
+    height: auto;
+    max-height: none;
+  }
+  .real-proof-card img {
+    height: 300px;
+  }
+}
