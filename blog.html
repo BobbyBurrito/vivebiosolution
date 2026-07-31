@@ -1,18 +1,22 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Commercial Cleaning Guides & Insights | VIVE BIOSOLUTION</title><meta name="description" content="Practical industrial cleaning, commercial kitchen and janitorial purchasing guides from VIVE BIOSOLUTION in Windsor, Ontario."/>
-<link rel="canonical" href="https://vivebiosolution.ca/blog"/><link rel="stylesheet" href="/style.css"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Commercial Cleaning Guides & Insights","url":"https://vivebiosolution.ca/blog","description":"Practical industrial cleaning, commercial kitchen and janitorial purchasing guides from VIVE BIOSOLUTION."}</script></head><body><header class="site-header"><div class="container nav-wrap">
-<a class="brand" href="/" aria-label="VIVE BIOSOLUTION home"><img src="/logo.png" alt="VIVE BIOSOLUTION logo"/></a>
-<nav class="main-nav" aria-label="Main navigation">
-<a href="/products">Products</a>
-<a href="/industries">Industries</a>
-<a href="/janitorial-supplies">Janitorial Supplies</a>
-<a href="/resources">Resources</a>
-<a href="/blog" aria-current="page">Insights</a>
-<a href="/about">About</a>
-<a href="/contact">Contact</a>
-</nav>
-<button class="menu-toggle" aria-label="Toggle menu">☰</button>
-</div></header>
+<link rel="canonical" href="https://vivebiosolution.ca/blog"/><link rel="stylesheet" href="/style.css"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Commercial Cleaning Guides & Insights","url":"https://vivebiosolution.ca/blog","description":"Practical industrial cleaning, commercial kitchen and janitorial purchasing guides from VIVE BIOSOLUTION."}</script></head><body><header class="insights-site-header">
+  <div class="container insights-nav-wrap">
+    <a class="insights-brand" href="/" aria-label="VIVE BIOSOLUTION home">
+      <img class="insights-logo" src="/logo.png" alt="VIVE BIOSOLUTION logo"/>
+    </a>
+    <nav class="insights-nav" aria-label="Main navigation">
+      <a href="/products">Products</a>
+      <a href="/industries">Industries</a>
+      <a href="/janitorial-supplies">Janitorial Supplies</a>
+      <a href="/resources">Resources</a>
+      <a href="/blog" aria-current="page">Insights</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <button class="insights-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+</header>
 <main><section class="page-intro insights-intro"><div class="container">
 <p class="small-title green">VIVE INSIGHTS</p>
 <h1>Commercial Cleaning Guides</h1>
@@ -24,6 +28,12 @@
 <article class="blog-card"><p class="blog-category">JANITORIAL PURCHASING</p><h2><a href="/blog/reduce-janitorial-supply-costs">How Businesses Can Reduce Janitorial Supply Costs Without Sacrificing Quality</a></h2><p>How to compare equivalent products, unit cost, freight, dilution, labour and supplier consolidation.</p><a class="text-link" href="/blog/reduce-janitorial-supply-costs">Read the guide →</a></article>
 </div></div></section></main><footer><div class="container footer-grid"><div><strong>VIVE BIOSOLUTION</strong><p>Industrial &amp; commercial cleaning chemicals and janitorial supply in Windsor, Ontario.</p></div><div><a href="/products">Products</a><a href="/industries">Industries</a><a href="/janitorial-supplies">Janitorial Supplies</a><a href="/resources">Resources</a><a href="/blog">Insights</a><a href="/contact">Contact</a></div></div><div class="container footer-bottom">© 2026 VIVE BIOSOLUTION Corporation.</div></footer>
 <script>
-const t=document.querySelector('.menu-toggle'),n=document.querySelector('.main-nav');
-if(t&&n)t.addEventListener('click',()=>n.classList.toggle('open'));
+const insightsToggle = document.querySelector('.insights-menu-toggle');
+const insightsNav = document.querySelector('.insights-nav');
+if (insightsToggle && insightsNav) {
+  insightsToggle.addEventListener('click', () => {
+    const isOpen = insightsNav.classList.toggle('open');
+    insightsToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+}
 </script></body></html>
