@@ -23,67 +23,175 @@
   <meta property="og:image" content="https://vivebiosolution.ca/vive-shift-product.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>Professional Cleaning Products | Vive Biosolution Corporation</title>
+  <meta name="robots" content="index, follow">
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Product image fix: show the full uploaded mockup/photo, including its background.
+       This overrides the global product-card cropping rules in style.css. */
+    .product-card-image {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 16 / 10 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: #f8fafc !important;
+      border: 1px solid rgba(148, 163, 184, 0.35) !important;
+      border-radius: 18px !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
+    }
+
+    .product-card-image img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      display: block !important;
+      background: #f8fafc !important;
+      transform: none !important;
+    }
+
+    .product-card:hover .product-card-image img {
+      transform: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .product-card-image {
+        aspect-ratio: 4 / 3 !important;
+      }
+    }
+  </style>
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "@id": "https://vivebiosolution.ca/products#collectionpage",
   "name": "Professional Cleaning Products",
   "url": "https://vivebiosolution.ca/products",
-  "description": "Professional bio-derived cleaning products manufactured by Vive Biosolution Corporation in Windsor, Ontario.",
-  "isPartOf": {
-    "@type": "WebSite",
-    "@id": "https://vivebiosolution.ca/#website",
-    "name": "Vive Biosolution Corporation",
-    "url": "https://vivebiosolution.ca/"
-  },
   "mainEntity": {
     "@type": "ItemList",
-    "name": "Vive Biosolution product lineup",
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "VIVE-SHIFT Industrial Degreaser",
-        "url": "https://vivebiosolution.ca/products#vive-shift"
+        "item": {
+          "@type": "Product",
+          "name": "VIVE-SHIFT Industrial Degreaser",
+          "image": "https://vivebiosolution.ca/vive-shift-product.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "VIVE"
+          },
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "Vive Biosolution Corporation"
+          }
+        }
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "VIVE-CLEAN All-Purpose Cleaner",
-        "url": "https://vivebiosolution.ca/products#vive-clean"
+        "item": {
+          "@type": "Product",
+          "name": "VIVE-CLEAN All-Purpose Cleaner",
+          "image": "https://vivebiosolution.ca/vive-clean-product.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "VIVE"
+          },
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "Vive Biosolution Corporation"
+          }
+        }
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "VIVE-GLASS Ammonia-Free Glass Cleaner",
-        "url": "https://vivebiosolution.ca/products#vive-glass"
+        "item": {
+          "@type": "Product",
+          "name": "VIVE-GLASS Ammonia-Free Glass Cleaner",
+          "image": "https://vivebiosolution.ca/vive-glass-product.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "VIVE"
+          },
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "Vive Biosolution Corporation"
+          }
+        }
       },
       {
         "@type": "ListItem",
         "position": 4,
-        "name": "VIVE-FLOOR Commercial Floor Cleaner",
-        "url": "https://vivebiosolution.ca/products#vive-floor"
+        "item": {
+          "@type": "Product",
+          "name": "VIVE-FLOOR Commercial Floor Cleaner",
+          "image": "https://vivebiosolution.ca/vive-floor-product.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "VIVE"
+          },
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "Vive Biosolution Corporation"
+          }
+        }
       },
       {
         "@type": "ListItem",
         "position": 5,
-        "name": "VIVE-DISH Dish Soap",
-        "url": "https://vivebiosolution.ca/products#vive-dish"
+        "item": {
+          "@type": "Product",
+          "name": "VIVE-DISH Dish Soap",
+          "image": "https://vivebiosolution.ca/vive-dish-product.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "VIVE"
+          },
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "Vive Biosolution Corporation"
+          }
+        }
       },
       {
         "@type": "ListItem",
         "position": 6,
-        "name": "VIVE-GRILL Grill & Kitchen Cleaner",
-        "url": "https://vivebiosolution.ca/products#vive-grill"
+        "item": {
+          "@type": "Product",
+          "name": "VIVE-GRILL Grill & Kitchen Cleaner",
+          "image": "https://vivebiosolution.ca/vive-grill-product.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "VIVE"
+          },
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "Vive Biosolution Corporation"
+          }
+        }
       },
       {
         "@type": "ListItem",
         "position": 7,
-        "name": "VIVE-SOAP Hand Soap",
-        "url": "https://vivebiosolution.ca/products#vive-soap"
+        "item": {
+          "@type": "Product",
+          "name": "VIVE-SOAP Hand Soap",
+          "image": "https://vivebiosolution.ca/vive-soap-product.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "VIVE"
+          },
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "Vive Biosolution Corporation"
+          }
+        }
       }
     ]
   }
@@ -116,9 +224,9 @@
 
       <div class="products-grid">
         <!-- VIVE-SHIFT -->
-        <div class="product-card" id="vive-shift">
+        <div class="product-card">
           <div class="product-card-image">
-            <img src="vive-shift-product.jpg" alt="VIVE-SHIFT Industrial Degreaser 4L jug by Vive Biosolution Corporation" loading="lazy" decoding="async">
+            <img src="vive-shift-product.jpg" alt="VIVE-SHIFT Butyl-Free Industrial Degreaser - Bio-Based Cleaning Solution" loading="lazy" decoding="async">
           </div>
           <h3>VIVE-SHIFT</h3>
           <p class="product-tagline"><strong>The butyl-free degreaser built for Canadian industry.</strong></p>
@@ -158,9 +266,9 @@
 
       <div class="products-grid">
         <!-- VIVE-CLEAN -->
-        <div class="product-card" id="vive-clean">
+        <div class="product-card">
           <div class="product-card-image">
-            <img src="vive-clean-product.jpg" alt="VIVE-CLEAN All-Purpose Cleaner 4L jug by Vive Biosolution Corporation" loading="lazy" decoding="async">
+            <img src="vive-clean-product.jpg" alt="VIVE-CLEAN Concentrated All-Purpose Cleaner - Bio-Based Formula" loading="lazy" decoding="async">
           </div>
           <h3>VIVE-CLEAN</h3>
           <p class="product-tagline"><strong>One concentrate. Forty litres of clean.</strong></p>
@@ -187,7 +295,7 @@
         </div>
 
         <!-- VIVE-GLASS -->
-        <div class="product-card" id="vive-glass">
+        <div class="product-card">
           <div class="product-card-image">
             <img src="vive-glass-product.jpg" alt="VIVE-GLASS Ammonia-Free Glass Cleaner by Vive Biosolution Corporation" loading="lazy" decoding="async">
           </div>
@@ -216,7 +324,7 @@
         </div>
 
         <!-- VIVE-FLOOR -->
-        <div class="product-card" id="vive-floor">
+        <div class="product-card">
           <div class="product-card-image">
             <img src="vive-floor-product.jpg" alt="VIVE-FLOOR Commercial Floor Cleaner by Vive Biosolution Corporation" loading="lazy" decoding="async">
           </div>
@@ -245,7 +353,7 @@
         </div>
 
         <!-- VIVE-DISH -->
-        <div class="product-card" id="vive-dish">
+        <div class="product-card">
           <div class="product-card-image">
             <img src="vive-dish-product.jpg" alt="VIVE-DISH Dish Soap by Vive Biosolution Corporation" loading="lazy" decoding="async">
           </div>
@@ -274,7 +382,7 @@
         </div>
 
         <!-- VIVE-GRILL -->
-        <div class="product-card" id="vive-grill">
+        <div class="product-card">
           <div class="product-card-image">
             <img src="vive-grill-product.jpg" alt="VIVE-GRILL Grill and Kitchen Cleaner by Vive Biosolution Corporation" loading="lazy" decoding="async">
           </div>
@@ -303,7 +411,7 @@
         </div>
 
         <!-- VIVE-SOAP -->
-        <div class="product-card" id="vive-soap">
+        <div class="product-card">
           <div class="product-card-image">
             <img src="vive-soap-product.jpg" alt="VIVE-SOAP Commercial Hand Soap by Vive Biosolution Corporation" loading="lazy" decoding="async">
           </div>
