@@ -17,16 +17,43 @@ document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
 
 const forms = document.querySelectorAll('.contact-form');
 forms.forEach((form) => {
-  form.addEventListener('submit', function(event) {
-    trackViveEvent('contact_form_submit', { form_name: form.getAttribute('name') || 'contact' });
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-    // Netlify forms should submit normally so the lead is actually captured.
-    if (form.dataset.netlify === 'true') {
-      return;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton ? submitButton.textContent : '';
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
     }
 
-    event.preventDefault();
-    alert('Thank you for contacting VIVE BIOSOLUTION! We will get back to you soon.');
-    form.reset();
+    try {
+      const formData = new FormData(form);
+
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`);
+      }
+
+      trackViveEvent('contact_form_submit', {
+        form_name: form.getAttribute('name') || 'contact'
+      });
+
+      window.location.href = '/thank-you';
+    } catch (error) {
+      console.error('Contact form submission error:', error);
+      alert('We could not send your request. Please try again or email info@vivebiosolution.ca.');
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    }
   });
 });
